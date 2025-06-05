@@ -22,22 +22,74 @@ h1, h2, h3 {
 }
 
 .header {
-  background-color: #222;
+  background-color: #222222;
   width: 100%;
   padding: 15px 0;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
-.header_menu {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  max-width: 960px;
-  margin: 0 auto;
+
+/*---------------------*/
+.header__menu {
+    list-style: none; /* Quitamos los puntos de la lista */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 960px;
+    margin: 0 auto;
 }
-.header_menu_link:hover {
-  background-color: #555;
+
+/* 1. Contenedor del dropdown: La clave es la posición relativa */
+.dropdown {
+    position: relative; /* Permite posicionar el menú anidado con respecto a este elemento */
+    display: inline-block; /* Asegura que se comporte bien en la línea */
+}
+
+/* 2. El menú desplegable: oculto por defecto y posicionado absolutamente */
+.dropdown-menu {
+    display: none; /* Oculto por defecto */
+    position: absolute; /* Posicionado con respecto al .dropdown */
+    top: 100%; /* Lo coloca justo debajo del elemento padre */
+    left: 0;
+    background-color: #333; /* Un fondo ligeramente más claro que el header */
+    min-width: 200px; /* Ancho mínimo para que se vea bien */
+    list-style: none; /* Quitamos los puntos de la lista */
+    padding: 10px 0;
+    border-radius: 0 0 8px 8px; /* Bordes redondeados solo en la parte inferior */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    z-index: 1; /* Asegura que aparezca por encima de otro contenido */
+}
+
+/* 3. Estilo de los enlaces dentro del dropdown */
+.dropdown-menu li a {
+    color: #f4f4f4;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block; /* Hace que toda el área sea clickeable, no solo el texto */
+    text-align: left;
+    transition: background-color 0.2s ease;
+}
+
+/* 4. Efecto hover para los enlaces del dropdown */
+.dropdown-menu li a:hover {
+    background-color: #555;
+    text-decoration: none; /* Quitamos el subrayado del hover general */
+    color: #fff;
+}
+
+/* 5. La magia: Mostrar el menú cuando se pasa el cursor sobre el contenedor */
+.dropdown:hover .dropdown-menu {
+    display: block; /* Mostramos el menú */
+}
+/*______________________*/
+
+.header__menu__link {
   text-decoration: none;
-  color: #fff
+  color: #ffffff
+}
+.header__menu__link:hover {
+  background-color: #555555;
+  text-decoration: none;
+  color: #ffffff
 }
 
 h1 {
