@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bicitrónica</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 </head>
 <body>
     <header class="header">
@@ -29,12 +31,10 @@
             </ul>
         </nav>
     </header>
+
     <div class="container_presentation">
         <div class="content-wrapper">
-            <img src="/assets/log.png" alt="Bicitrónica Logo" class="logo">
-            <!--<h1 class="title">Bicitrónica</h1>
-            <h2>Heading 2 with Montserrat</h2>
-            <h3>Heading 3 with Montserrat</h3>-->
+            <img src="./assets/log.png" alt="Bicitrónica Logo" class="logo">
             <div class="content-text">
                 <h1 class="title_presentation">
                     Bicitrónica
@@ -46,18 +46,42 @@
                     producción y el tiempo de ciclo para obtener mayores ganancias.
                 </p>
                 <p>
-                    Puede revisar lo productos de los que disponemos en la parte de abajo
+                    Puede revisar los productos de los que disponemos en la parte de abajo.
                 </p>
             </div>
         </div>
     </div>
-    <div class="container_products">
-        <h1 class="title_products">
-            Scooter
-        </h1>
-        <p>
-            avrevaervearvaerveaavravevaervaerv
-        </p>
-    </div>
+    
+    <section class="scroll-zoom-section" id="bike-section">
+        <div class="background-image-container bike-bg"></div>
+        <div class="overlay-content">
+            <h1 class="title_products">Bicicletas Eléctricas</h1>
+            <p>Descubre nuestra gama de bicicletas eléctricas diseñadas para cada aventura. Desde la ciudad hasta la montaña, encuentra la autonomía perfecta para tu estilo de vida.</p>
+            <p>Experimenta la potencia y eficiencia de nuestra tecnología, optimizando tus viajes con la mejor robotización.</p>
+            <a href="#" class="button">Ver Modelos</a>
+        </div>
+    </section>
+
+    <section class="scroll-zoom-section" id="scooter-section">
+        <div class="background-image-container scooter-bg"></div>
+        <div class="overlay-content">
+            <h1 class="title_products">Scooters Eléctricos</h1>
+            <p>Movilízate de forma ágil y ecológica con nuestros scooters eléctricos. Ideales para el día a día urbano, con diseños compactos y alta eficiencia.</p>
+            <p>La ingeniería robótica al servicio de tu movilidad, garantizando un rendimiento superior y una experiencia de conducción inigualable.</p>
+            <a href="#" class="button">Explorar Scooters</a>
+        </div>
+    </section>
+
+    <section class="scroll-zoom-section" id="charger-section">
+        <div class="background-image-container charger-bg"></div>
+        <div class="overlay-content">
+            <h1 class="title_products">Estaciones de Carga Inteligentes</h1>
+            <p>Optimiza la recarga de tus vehículos eléctricos con nuestras estaciones de carga inteligentes. Diseñadas para ser rápidas, seguras y eficientes.</p>
+            <p>Integrando la automatización para una gestión energética superior, nuestras celdas de manufactura robotizadas aseguran la máxima calidad.</p>
+            <a href="#" class="button">Más Información</a>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
 </body>
 </html>
