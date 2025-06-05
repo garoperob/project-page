@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Saira+Stencil+One&display=swap');
 /* Basic Reset (optional, but good practice) */
 * {
   margin: 0;
@@ -32,10 +33,17 @@ h1, h2, h3 {
 .header__menu {
     list-style: none; /* Quitamos los puntos de la lista */
     display: flex;
-    justify-content: space-around;
+    justify-content:space-between;
     align-items: center;
     max-width: 960px;
     margin: 0 auto;
+}
+.title_presentation_logo {
+  /*font-family: "Saira Stencil One", sans-serif*/
+  font-family: "Audiowide", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #ffffff
 }
 
 /* 1. Contenedor del dropdown: La clave es la posición relativa */
@@ -121,12 +129,44 @@ a:hover {
   color: #0056b3; /* Darker blue on hover */
 }
 
-/* A simple container (optional) */
-.container {
+/* You might also want to adjust the top padding of the container */
+.container_presentation {
   max-width: 960px;
   margin: auto;
   background-color: #fff;
   padding: 30px;
-  border-radius: 8px;
+  border-radius: 0 0 8px 8px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  padding-top: 20px; /* Adjust top padding to accommodate the logo*/ 
+}
+.content-wrapper {
+    display: flex; /* Enables Flexbox */
+    align-items: flex-start; /* Aligns items to the top of the container */
+    gap: 20px; /* Adds space between the logo and the text content */
+}
+
+.logo {
+    max-width: 250px; /* Adjust the maximum width as needed */
+    height: auto; /* Maintains aspect ratio */
+    flex-shrink: 0; /* Prevents the logo from shrinking */
+}
+
+.content-text {
+    flex-grow: 1; /* Allows the text content to take up available space */
+}
+.title_presentation {
+  /*font-family: "Saira Stencil One", sans-serif*/
+  font-family: "Audiowide", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #053305
+}
+.container_products {
+  max-width: 960px;
+  margin: auto;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  padding-top: 20px; /* Adjust top padding to accommodate the logo*/ 
 }
