@@ -194,13 +194,13 @@ a:hover {
 
 /* Specific background images for each section */
 .bike-bg {
-    background-image: url('./assets/bike.jpg'); /* REPLACE with your bike image path */
+    background-image: url('./assets/low-auto.png'); /* REPLACE with your bike image path */
 }
 .scooter-bg {
-    background-image: url('./assets/scooter.jpg'); /* REPLACE with your scooter image path */
+    background-image: url('./assets/medium-auto.png'); /* REPLACE with your scooter image path */
 }
 .charger-bg {
-    background-image: url('./assets/charger.jpg'); /* REPLACE with your charger image path */
+    background-image: url('./assets/high-auto.png'); /* REPLACE with your charger image path */
 }
 
 .overlay-content {
