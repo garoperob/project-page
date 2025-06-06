@@ -171,13 +171,26 @@ a:hover {
     width: 100%;
     height: 70vh; /* Make it take up 70% of viewport height */
     overflow: hidden; /* Hide overflowing parts of the image as it scales */
-    display: flex; /* For centering content */
+    display: flex; /* Enables Flexbox */
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */ /* Remove or comment this out */
+    justify-content: flex-end; /* Aligns content to the right */
     text-align: center;
     color: white; /* Default text color for content */
     text-shadow: 1px 1px 3px rgba(0,0,0,0.8); /* Enhance text readability */
     margin-bottom: 40px; /* Space between sections */
+}
+
+.overlay-content {
+    position: relative; /* Place content above the image/overlay */
+    z-index: 10; /* Ensure content is on top */
+    max-width: 500px; /* Keep max-width for content readability */
+    padding: 20px;
+    background-color: rgba(0,0,0,0.4); /* Semi-transparent dark background for content block */
+    border-radius: 8px;
+    padding-bottom: 25px; /* More padding at bottom for button */
+    margin-right: 5%; /* Add margin to the right to push it further left from the edge */
+    text-align: left; /* Align text within the overlay-content to the left */
 }
 
 .background-image-container {
@@ -203,15 +216,15 @@ a:hover {
     background-image: url('./assets/high-auto.png'); /* REPLACE with your charger image path */
 }
 
-.overlay-content {
-    position: relative; /* Place content above the image/overlay */
-    z-index: 10; /* Ensure content is on top */
+/*.overlay-content {
+    position: relative; /* Place content above the image/overlay *
+    z-index: 10; /* Ensure content is on top *
     max-width: 800px;
     padding: 20px;
-    background-color: rgba(0,0,0,0.4); /* Semi-transparent dark background for content block */
+    background-color: rgba(0,0,0,0.4); /* Semi-transparent dark background for content block *
     border-radius: 8px;
-    padding-bottom: 25px; /* More padding at bottom for button */
-}
+    padding-bottom: 25px; /* More padding at bottom for button *
+}*/
 
 .overlay-content h1.title_products {
     font-size: 3.5em; /* Larger title for product sections */
