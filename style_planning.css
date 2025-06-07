@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Saira+Stencil+One&display=swap');
+/* Basic Reset (optional, but good practice) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+  font-family: 'Montserrat', sans-serif; /* Use Montserrat, fallback to generic sans-serif */
+  line-height: 1.6;
+  color: #333; /* Dark gray text color */
+  background-color: #f4f4f4; /* Light gray background */
+}
+
+/* Heading styles */
+h1, h2, h3 {
+  font-weight: 700; /* Use the bold weight */
+  margin-bottom: 15px;
+  color: #222; /* Slightly darker for headings */
+}
+
+.header {
+  background-color: #222222;
+  width: 100%;
+  padding: 15px 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+/*---------------------*/
+.header__menu {
+    list-style: none; /* Quitamos los puntos de la lista */
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    max-width: 960px;
+    margin: 0 auto;
+}
+.title_presentation_logo {
+  font-family: "Audiowide", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #ffffff;
+  font-size: 1.8em; /* Adjusted for better visibility */
+}
+
+/* 1. Contenedor del dropdown: La clave es la posición relativa */
+.dropdown {
+    position: relative; /* Permite posicionar el menú anidado con respecto a este elemento */
+    display: inline-block; /* Asegura que se comporte bien en la línea */
+}
+
+/* 2. El menú desplegable: oculto por defecto y posicionado absolutamente */
+.dropdown-menu {
+    display: none; /* Oculto por defecto */
+    position: absolute; /* Posicionado con respecto al .dropdown */
+    top: 100%; /* Lo coloca justo debajo del elemento padre */
+    left: 0;
+    background-color: #333; /* Un fondo ligeramente más claro que el header */
+    min-width: 200px; /* Ancho mínimo para que se vea bien */
+    list-style: none; /* Quitamos los puntos de la lista */
+    padding: 10px 0;
+    border-radius: 0 0 8px 8px; /* Bordes redondeados solo en la parte inferior */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    z-index: 1; /* Asegura que aparezca por encima de otro contenido */
+}
+
+/* 3. Estilo de los enlaces dentro del dropdown */
+.dropdown-menu li a {
+    color: #f4f4f4;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block; /* Hace que toda el área sea clickeable, no solo el texto */
+    text-align: left;
+    transition: background-color 0.2s ease;
+}
+
+/* 4. Efecto hover para los enlaces del dropdown */
+.dropdown-menu li a:hover {
+    background-color: #555;
+    text-decoration: none; /* Quitamos el subrayado del hover general */
+    color: #fff;
+}
+
+/* 5. La magia: Mostrar el menú cuando se pasa el cursor sobre el contenedor */
+.dropdown:hover .dropdown-menu {
+    display: block; /* Mostramos el menú */
+}
+/*______________________*/
+
+.header__menu__link {
+  text-decoration: none;
+  color: #ffffff;
+  padding: 10px 15px; /* Add padding to links for better hover area */
+  border-radius: 5px; /* Slightly rounded corners for hover */
+  transition: background-color 0.3s ease; /* Smooth transition for hover */
+}
+.header__menu__link:hover {
+  background-color: #555555;
+  text-decoration: none;
+  color: #ffffff
+}
+
+/* Base H1-H3 styles - can be overridden by specific classes */
+h1 {
+  font-size: 2.5em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+/* Paragraph styles */
+p {
+  margin-bottom: 10px;
+  font-weight: 400; /* Use the regular weight */
+}
+
+/* Link styles */
+a {
+  color: #007bff; /* Blue link color */
+  text-decoration: none; /* Remove underline by default */
+}
+
+a:hover {
+  text-decoration: underline; /* Add underline on hover */
+  color: #0056b3; /* Darker blue on hover */
+}
+
+/* --- MODULE CONTAINER STYLES --- */
+.container_module {
+    max-width: 960px;
+    margin: 20px auto; /* Centered with top/bottom margin */
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.module_title {
+    font-family: "Audiowide", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #053305; /* Or a color that matches your design */
+    margin-bottom: 30px;
+    text-align: center; /* Center the module title */
+    font-size: 2.8em; /* Adjust size as needed */
+}
+
+.module_section {
+    margin-bottom: 30px; /* Space between sections */
+    padding-bottom: 20px; /* Padding at the bottom of each section */
+    border-bottom: 1px solid #eee; /* Subtle separator */
+}
+
+.module_section:last-child {
+    border-bottom: none; /* No border for the last section */
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.module_section h2 {
+    color: #222; /* Consistent heading color */
+    margin-bottom: 15px;
+    font-size: 1.8em;
+}
+
+.module_section p {
+    margin-bottom: 15px;
+    line-height: 1.7;
+}
+
+.module_section ul {
+    list-style: disc; /* Default disc for unordered lists */
+    margin-left: 20px; /* Indent list items */
+    margin-bottom: 15px;
+}
+
+.module_section ul li {
+    margin-bottom: 8px;
+}
