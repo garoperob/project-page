@@ -153,35 +153,251 @@ a:hover {
     font-size: 2.8em; /* Adjust size as needed */
 }
 
-.module_section {
-    margin-bottom: 30px; /* Space between sections */
-    padding-bottom: 20px; /* Padding at the bottom of each section */
-    border-bottom: 1px solid #eee; /* Subtle separator */
+.module-description {
+  text-align: justify;
+  line-height: 1.6;
+  margin-bottom: 30px;
 }
-
-.module_section:last-child {
-    border-bottom: none; /* No border for the last section */
-    margin-bottom: 0;
-    padding-bottom: 0;
+.module-subtitle{
+  text-align: center; 
+  margin-top: 20px; 
+  margin-bottom: 20px; 
+  color: #053305; 
+  font-family: 'Audiowide', sans-serif;
 }
-
-.module_section h2 {
-    color: #222; /* Consistent heading color */
+/* Added for sub-sections within the module content */
+.module-content-subheader {
+    color: #053305;
+    font-family: "Audiowide", sans-serif;
+    font-size: 1.4em;
+    margin-top: 30px;
     margin-bottom: 15px;
-    font-size: 1.8em;
+    text-align: left;
 }
-
-.module_section p {
-    margin-bottom: 15px;
-    line-height: 1.7;
+.module-content-list {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    line-height: 1.6;
 }
-
-.module_section ul {
-    list-style: disc; /* Default disc for unordered lists */
-    margin-left: 20px; /* Indent list items */
-    margin-bottom: 15px;
+.module-content-list ul { /* For nested lists if any */
+    list-style-type: circle;
+    margin-left: 20px;
 }
-
-.module_section ul li {
+.module-content-list li {
     margin-bottom: 8px;
+}
+.module-content-list a {
+    color: #007bff; /* Standard link color */
+    text-decoration: none;
+}
+.module-content-list a:hover {
+    text-decoration: underline;
+}
+/* style_planning.css */
+
+.gantt-chart-wrapper {
+    position: relative;
+    overflow-x: auto;
+    padding-bottom: 20px; /* Space if horizontal scrollbar appears */
+    /* Remove padding-right as 'Semanas' label is no longer on the right */
+}
+
+.gantt-chart-container {
+    display: grid;
+    grid-template-columns: 200px 1fr; /* 200px for task labels, 1fr for chart area */
+    font-family: 'Montserrat', sans-serif;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    min-width: 900px; /* Adjust as needed for desired chart width */
+}
+
+.gantt-chart-header {
+    grid-column: 1 / -1; /* Spans both columns of the gantt-chart-container */
+    display: grid;
+    /* Define a new grid for the header: Label column (Tarea), then 2 rows for chart area: 'Semanas' title + week numbers */
+    grid-template-columns: subgrid; /* Inherit task label column width */
+    grid-template-rows: auto auto; /* First row for "Semanas" title, second for week numbers */
+    border-bottom: 1px solid #ccc;
+    background-color: #e0e0e0;
+}
+
+.gantt-chart-header-label {
+    grid-column: 1; /* Position in the first column */
+    grid-row: 1 / -1; /* Spans both rows of the header (vertically centered for "Tarea") */
+    font-weight: bold;
+    padding: 10px;
+    border-right: 1px solid #ccc;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gantt-chart-x-axis-label { /* New style for the horizontal 'Semanas' label */
+    grid-column: 2; /* Position in the second column (chart area) */
+    grid-row: 1; /* Position in the first row of the header grid */
+    text-align: center;
+    font-weight: bold;
+    color: #555;
+    font-size: 1.1em;
+    padding-bottom: 5px; /* Space between 'Semanas' and week numbers */
+    border-bottom: 1px solid #ccc; /* Separator line below 'Semanas' */
+    display: flex; /* Use flex to easily center text */
+    align-items: center;
+    justify-content: center;
+}
+
+.gantt-chart-weeks-row {
+    grid-column: 2; /* Position in the second column */
+    grid-row: 2; /* Position in the second row of the header grid */
+    display: grid;
+    grid-template-columns: repeat(21, 1fr); /* **FIXED:** 21 columns for weeks 0 to 20 */
+    text-align: center;
+    font-weight: bold;
+    color: #555;
+    padding: 5px 0;
+    position: relative;
+    /* Vertical lines for every week */
+    background-image: linear-gradient(to right, #eee 1px, transparent 1px);
+    background-size: calc(100% / 20) 100%; /* Line every 1/20th of the width (20 segments) */
+    background-repeat: repeat-x;
+}
+
+.week-label {
+    position: relative;
+    font-size: 0.85em;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.gantt-chart-body {
+    grid-column: 1 / -1; /* Spans both columns */
+    display: grid;
+    grid-template-columns: subgrid; /* Inherits columns from parent */
+}
+
+.gantt-task-row {
+    grid-column: 1 / -1; /* Spans both columns */
+    display: grid;
+    grid-template-columns: subgrid; /* Inherits columns from parent */
+    align-items: flex-start; /* **FIXED:** Align content to the top (for multiline text) */
+    min-height: 35px; /* **FIXED:** Ensure minimum height, but allows to grow */
+    padding-top: 5px; /* Add some top padding */
+    padding-bottom: 5px; /* Add some bottom padding */
+    background-color: #fff;
+    border: 1px solid #eee;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    margin-bottom: 5px; /* Add margin between rows */
+}
+
+.gantt-task-label {
+    grid-column: 1; /* Aligns with the first column */
+    padding: 0 10px;
+    font-weight: bold;
+    color: #333;
+    font-size: 0.9em;
+    /* Remove fixed height, nowrap, overflow, text-overflow to allow wrapping */
+    white-space: normal; /* **FIXED:** Allow text to wrap */
+    overflow: visible; /* **FIXED:** Ensure content is visible */
+    text-overflow: clip; /* **FIXED:** No ellipsis */
+    align-items: flex-start; /* Align label text to top within its own cell */
+    padding-top: 5px; /* Match row padding */
+    padding-bottom: 5px; /* Match row padding */
+    border-right: 1px solid #ccc;
+    background-color: #fff; /* Ensure label background is clear */
+}
+
+.gantt-task-bar-wrapper {
+    grid-column: 2; /* Aligns with the second column */
+    position: relative;
+    height: 100%; /* Allows wrapper to expand with row height */
+    /* Vertical grid lines for tasks area */
+    background-image: linear-gradient(to right, #eee 1px, transparent 1px);
+    background-size: calc(100% / 20) 100%; /* Lines every 1/20th of the width */
+    background-repeat: repeat-x;
+}
+
+.gantt-task-bar {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 25px;
+    background-color: #4CAF50;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    opacity: 0.9;
+    min-width: 5px;
+    z-index: 1;
+}
+
+/* Optional: Add hover effect */
+.gantt-task-bar:hover {
+    opacity: 1;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Add these rules to your existing style_planning.css file */
+
+.table-container {
+    overflow-x: auto; /* Ensures tables are scrollable on small screens */
+    margin-bottom: 40px;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse; /* Collapses borders between cells */
+    margin: 20px 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.data-table thead th {
+    background-color: #053305; /* Dark green background for header */
+    color: #fff; /* White text for header */
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 2px solid #031c03; /* Slightly darker border for header */
+}
+
+.data-table tbody tr {
+    border-bottom: 1px solid #ddd; /* Light border between rows */
+}
+
+.data-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2; /* Light grey background for even rows */
+}
+
+.data-table tbody tr:hover {
+    background-color: #e0e0e0; /* Hover effect for rows */
+}
+
+.data-table tbody td {
+    padding: 10px 15px;
+    vertical-align: top; /* Align text to the top for multi-line content */
+    border-left: 1px solid #eee; /* Light vertical borders */
+    border-right: 1px solid #eee; /* Light vertical borders */
+}
+
+.data-table tbody td:first-child {
+    border-left: none; /* No left border for the first column */
+}
+
+.data-table tbody td:last-child {
+    border-right: none; /* No right border for the last column */
+}
+
+/* Ensure the table itself has rounded corners if desired, or let the shadow define it */
+.data-table {
+    border-radius: 8px; /* Rounded corners for the entire table */
+    overflow: hidden; /* Ensures borders/shadows respect rounded corners */
+}
+
+.data-table tbody td ul li{
+  margin-left: 6px;
 }
