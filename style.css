@@ -227,7 +227,7 @@ a:hover {
 }*/
 
 .overlay-content h1.title_products {
-    font-size: 3.0em; /* Larger title for product sections */
+    font-size: 2.9em; /* Larger title for product sections */
     margin-bottom: 15px;
     color: white; /* Ensure heading is white */
     font-family: "Saira Stencil One", sans-serif; /* Apply Audiowide for product titles */
