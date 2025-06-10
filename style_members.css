@@ -225,10 +225,11 @@ a:hover {
 }
 
 .member-description {
-    font-size: 0.95em;
+    font-size: 1.5em;
     color: #555;
     margin-bottom: 15px;
     line-height: 1.5;
+    text-decoration: underline;
 }
 
 .recommendations {
