@@ -233,6 +233,80 @@ a:hover {
     overflow: hidden; /* Ensures borders/shadows respect rounded corners */
 }
 
+/* --- Styles for the data-table-container (for centering) --- */
+  .data-table-container {
+      width: fit-content; /* Adjust as needed, e.g., 500px, 80% */
+      margin-left: auto;
+      margin-right: auto;
+      /* Add padding/shadow if you want the container itself styled */
+      /* padding: 15px; */
+      /* box-shadow: 0 2px 5px rgba(0,0,0,0.1); */
+      /* background-color: #fff; */
+  }
+
+  /* --- Specific Styles for #table4 (to get the green header and row headers) --- */
+  #table4 {
+      border-collapse: collapse;
+      width: 100%; /* Make sure table fills its container */
+      margin: 0; /* Remove default margin from .data-table as container adds it */
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.9em;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      overflow: hidden; /* Important for rounded corners with collapsed borders */
+  }
+
+  /* Styling for ALL cells within #table4 (overrides .data-table defaults) */
+  #table4 th,
+  #table4 td {
+      border: 1px solid #ccc; /* Light border for all cells */
+      padding: 10px 15px; /* Consistent padding */
+      text-align: left; /* Default alignment */
+      vertical-align: middle; /* Center content vertically */
+      background-color: #fff; /* Default white background for data cells */
+      color: #333; /* Default text color */
+  }
+
+  /* GREEN FILL for the TOP HEADER ROW (Concept, Valor) in #table4 */
+  #table4 thead th {
+      background-color: #053305; /* Your dark green */
+      color: #fff; /* White text */
+      font-weight: bold;
+      text-align: center; /* Center the top headers */
+      border-bottom: 2px solid #031c03; /* Darker border */
+  }
+
+  /* Styling for the ROW HEADERS (Tasa, VNA, etc.) in #table4's tbody */
+  #table4 tbody th {
+      background-color: #e6e6e6; /* Light grey background for row headers */
+      color: #333;
+      font-weight: bold;
+      text-align: right; /* Align row headers to the right */
+      border-right: 1px solid #ccc; /* Separator from data cells */
+      border-left: none; /* No left border if desired */
+  }
+
+  /* Alternating row colors for data rows in #table4's tbody */
+  #table4 tbody tr:nth-child(even) {
+      background-color: #f9f9f9; /* Very light grey for even rows */
+  }
+
+  /* Hover effect for rows in #table4 */
+#table4 tbody tr:hover th,
+#table4 tbody tr:hover td {
+    background-color: #e0e0e0; /* Your desired hover color */
+    /* You might need !important if other background rules are very specific,
+       but usually, this selector is specific enough. */
+    /* background-color: #e0e0e0 !important; */
+}
+  /* Ensure no unwanted borders are removed */
+  #table4 tbody td:first-child {
+      border-left: 1px solid #eee; /* Keep a light border */
+  }
+  #table4 tbody td:last-child {
+      border-right: 1px solid #eee; /* Keep a light border */
+  }
+
 .data-table tbody td ul li{
   margin-left: 6px;
 }
@@ -271,59 +345,6 @@ a:hover {
 .module-subtitle {
    font-family: "Audiowide", sans-serif; 
    color:#053305;
+   text-align: center;
 }
-/* --- MODULE CONTAINER STYLES --- 
-.container_module {
-    max-width: 960px;
-    margin: 20px auto; /* Centered with top/bottom margin 
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-.module_title {
-    font-family: "Audiowide", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    color: #053305; /* Or a color that matches your design 
-    margin-bottom: 30px;
-    text-align: center; /* Center the module title 
-    font-size: 2.8em; /* Adjust size as needed 
-}
-
-.module_section {
-    margin-bottom: 30px; /* Space between sections 
-    padding-bottom: 20px; /* Padding at the bottom of each section 
-    border-bottom: 1px solid #eee; /* Subtle separator 
-}
-
-.module_section:last-child {
-    border-bottom: none; /* No border for the last section 
-    margin-bottom: 0;
-    padding-bottom: 0;
-}
-
-.module_section h2 {
-    color: #222; /* Consistent heading color 
-    margin-bottom: 15px;
-    font-size: 1.8em;
-}
-
-.module_section p {
-    margin-bottom: 15px;
-    line-height: 1.7;
-}
-
-.module_section ul {
-    list-style: disc; /* Default disc for unordered lists 
-    margin-left: 20px; /* Indent list items 
-    margin-bottom: 15px;
-}
-
-.module_section ul li {
-    margin-bottom: 8px;
-}*/
-
-/* Add these rules to your existing style_planning.css file */
 

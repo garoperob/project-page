@@ -100,6 +100,95 @@ document.addEventListener('DOMContentLoaded', () => {
     loadCSVTable('table1', 'loadingMessage1', 'economics/Costos_Iniciales.csv');
     loadCSVTable('table2', 'loadingMessage2', 'economics/Componentes.csv');
     loadCSVTable('table3', 'loadingMessage3', 'economics/Proyecciones_5_anios.csv');
-    loadCSVTable('table4', 'loadingMessage4', 'economics/Conclusions.csv');
     loadCSVTable('table5', 'loadingMessage5', 'economics/Years_sales.csv');
 });
+
+async function loadCSVAndRenderTable4() {
+      // Make sure your_data.csv is in the same directory as this HTML file
+      const csvFilePath = 'economics/Conclusions.csv';
+      const table = document.getElementById('table4');
+
+      if (!table) {
+        console.error('Table with ID "table4" not found.');
+        return;
+      }
+
+      try {
+        const response = await fetch(csvFilePath);
+        // Check if the network request was successful
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const csvText = await response.text();
+        const data = parseCSV(csvText); // Simple CSV parser
+
+        if (data.length === 0) {
+          table.innerHTML = '<thead><tr><th>No data found in CSV.</th></tr></thead><tbody></tbody>';
+          return;
+        }
+
+        // Clear existing content to avoid duplication on re-render
+        table.innerHTML = '';
+
+        // Create thead for column headers (Concepto, Valor)
+        const thead = table.createTHead();
+        const headerRow = thead.insertRow();
+
+        // Create <th> elements for the header row (Concepto, Valor)
+        const thConcepto = document.createElement('th');
+        thConcepto.textContent = 'Concepto';
+        headerRow.appendChild(thConcepto);
+
+        const thValor = document.createElement('th');
+        thValor.textContent = 'Valor';
+        headerRow.appendChild(thValor);
+
+        // Create tbody for data rows
+        const tbody = table.createTBody();
+
+        // Iterate through each row of the parsed CSV data
+        data.forEach(rowData => {
+          // Skip malformed rows (e.g., empty lines or lines with less than 2 columns)
+          if (rowData.length < 2) {
+            console.warn('Skipping malformed CSV row:', rowData);
+            return;
+          }
+
+          const tr = tbody.insertRow();
+          const concept = rowData[0]; // First item in CSV row is the concept/label
+          const value = rowData[1];   // Second item is the value
+
+          // Create a <th> for the concept (this acts as the vertical header for the row)
+          const th = document.createElement('th');
+          th.textContent = concept;
+          tr.appendChild(th);
+
+          // Create a <td> for the value
+          const td = document.createElement('td');
+          td.textContent = value;
+          tr.appendChild(td);
+        });
+
+      } catch (error) {
+        console.error('Error loading or parsing CSV:', error);
+        table.innerHTML = '<thead><tr><th>Error loading data.</th></tr></thead><tbody></tbody>';
+      }
+    }
+
+    /**
+     * Simple CSV parser function.
+     * Assumes no commas within data fields and simple line breaks.
+     * For production environments with complex CSVs (e.g., quoted commas),
+     * consider using a dedicated library like Papa Parse.
+     * @param {string} csv - The raw CSV string.
+     * @returns {Array<Array<string>>} - An array of arrays, where each inner array is a row.
+     */
+    function parseCSV(csv) {
+      // Trim to remove leading/trailing whitespace, then split by new line
+      const lines = csv.trim().split('\n');
+      // Map each line to an array of strings by splitting by comma
+      return lines.map(line => line.split(','));
+    }
+
+    // Call the function to load and render the table when the DOM is fully loaded
+    document.addEventListener('DOMContentLoaded', loadCSVAndRenderTable4);
