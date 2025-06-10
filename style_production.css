@@ -166,9 +166,21 @@ a:hover {
 }
 
 .module_section h2 {
-    color: #222; /* Consistent heading color */
+    color:#053305; /* Consistent heading color */
     margin-bottom: 15px;
     font-size: 1.8em;
+    font-family: "Audiowide", sans-serif;
+}
+
+.module_section h3 {
+  color:#053305;
+  font-family: "Audiowide", sans-serif;
+}
+
+.container-wrapper {
+    display: flex; /* Enables Flexbox */
+    align-items: flex-start; /* Aligns items to the top of the container */
+    gap: 20px; /* Adds space between the logo and the text content */
 }
 
 .module_section p {
@@ -184,4 +196,13 @@ a:hover {
 
 .module_section ul li {
     margin-bottom: 8px;
+}
+
+.container-wrapper ul li {
+  line-height: 100px;
+}
+
+.value-map {
+  width: 900px;
+  align-content: center;
 }

@@ -32,28 +32,59 @@
 
     <div class="container_module">
         <h1 class="module_title">Gestión de Producción y Automatización</h1>
+        <section class="module_section">
+            <p>
+                El análisis de la línea de producción consistió en la realición del VSM como se muestra
+                en la figura de abajo. Esto se hizo para establecer las estaciones iniciales y el
+                comportamiento del fluho del producto con tal de encontrar la etapa donde la automatización
+                y robotización fuera más conveniente
+            </p>
+            <img src="./assets/VSM.jpeg" alt="VSM" class="value-map">
+        </section>
         
         <section class="module_section">
-            <h2>Principios de la Gestión de Producción</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam finibus, dolor a cursus maximus, urna sem semper arcu, in egestas libero nulla a neque. Nam nec nibh vel purus vestibulum tempor. Praesent quis tincidunt sem, quis pulvinar lacus. Proin sit amet dolor ac ligula imperdiet efficitur. Mauris eu arcu a enim blandit placerat. Aliquam erat volutpat. Sed vitae dolor ac justo interdum placerat at sit amet quam.</p>
-            <p>Quisque non risus eu neque maximus vulputate. Duis eu justo eu odio fermentum suscipit. Phasellus efficitur in justo in accumsan. Nullam lacinia nunc at enim blandit, eu aliquet metus posuere. Integer interdum odio nec velit tristique, a efficitur velit efficitur. In in mauris libero.</p>
+            <p>
+                Para el mercado actual de bicicletas eléctricas se tiene una producción aproximada anual 
+                del 15.000 unidades con un incremento del 10% anual debido a las proyecciones y al 
+                crecimiento en el mercado de estos productos.
+            </p>
+            <h2>Unidades</h2>
+            <div class="container-wrapper">
+                <ul>
+                    <li><strong>Objetivo actual:</strong> ~10% (1.500 unidades/año)</li>
+                    <li><strong>Objetivo a tres años:</strong> ~15% → 2.250 unidades/año</li>
+                </ul>
+                <img src="./assets/pie-chart-production.png" alt="Participación evobike" class="pie-chart">
+            </div>
         </section>
 
         <section class="module_section">
-            <h2>Sistemas de Automatización Industrial</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <h2>Objetivos de diseño</h2>
             <ul>
-                <li>Controladores Lógicos Programables (PLC): Ut enim ad minim veniam, quis nostrud exercitation.</li>
-                <li>Robótica Industrial: Duis aute irure dolor in reprehenderit in voluptate.</li>
-                <li>Sistemas de Visión: Excepteur sint occaecat cupidatat non proident.</li>
-                <li>Sensores y Actuadores: Sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
+                <li>
+                    Precisión del avance lineal: Se requiere un desplazamiento de alta precisión (0,01 mm), 
+                    logrado mediante un tornillo de paso fino y motor paso a paso.
+                </li>                
+                <li>
+                    Grados de libertad: El sistema debe tener al menos tres grados de libertad 
+                    automatizados: un eje lineal (Z) y dos rotacionales (X e Y), controlados 
+                    con motores paso a paso.
+                </li>
+                <li>
+                    Velocidad del esmeril: Se necesita control de velocidad variable entre
+                     500 y 5000 rpm, adaptable a distintas etapas del tallado, usando un
+                      variador de frecuencia o modulación PWM.
+                </li>
+                <li>
+                    Rigidez estructural: La estructura debe mantener una deflexión menor a
+                     0,1 mm bajo carga, utilizando perfiles metálicos o impresiones 3D reforzadas.
+                </li>
+                <li>
+                    Automatización: El sistema estará controlado por un microcontrolador, 
+                    gestionando motores, parámetros operativos y permitiendo la incorporación 
+                    de sensores o control manual/semi-automático.
+                </li>
             </ul>
-        </section>
-
-        <section class="module_section">
-            <h2>Optimización de Procesos Productivos</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam phasellus vestibulum lorem sed risus ultricies tristique nulla aliquet. Quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci. Quam viverra orci sagittis eu volutpat odio facilisis mauris sit. Et magnis dis parturient montes nascetur ridiculus mus mauris vitae.</p>
-            <p>Pellentesque eu facilisis sed odio morbi. Adipiscing at in tellus integer feugiat scelerisque. Commodo sed egestas egestas fringilla. Ultrices gravida dictum fusce ut placerat. In ante metus dictum at tempor commodo ullamcorper a lacus. Adipiscing elit duis tristique sollicitudin nibh sit amet. Leo integer malesuada nunc vel risus commodo viverra maecenas.</p>
         </section>
     </div>
 </body>
