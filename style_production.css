@@ -177,6 +177,27 @@ a:hover {
   font-family: "Audiowide", sans-serif;
 }
 
+.module-subtitle{
+  text-align: center; 
+  margin-top: 20px; 
+  margin-bottom: 20px; 
+  color: #053305; 
+  font-family: 'Audiowide', sans-serif;
+}
+/* Added for sub-sections within the module content */
+.module-content-subheader {
+    color: #053305;
+    font-family: "Audiowide", sans-serif;
+    font-size: 1.4em;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.module-content-list li{
+  margin-left: 100px;
+}
+
 .container-wrapper {
     display: flex; /* Enables Flexbox */
     align-items: flex-start; /* Aligns items to the top of the container */
@@ -205,4 +226,63 @@ a:hover {
 .value-map {
   width: 900px;
   align-content: center;
+}
+
+.table-container {
+    overflow-x: auto; /* Ensures tables are scrollable on small screens */
+    margin-bottom: 40px;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse; /* Collapses borders between cells */
+    margin: 20px 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.data-table thead th {
+    background-color: #053305; /* Dark green background for header */
+    color: #fff; /* White text for header */
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 2px solid #031c03; /* Slightly darker border for header */
+}
+
+.data-table tbody tr {
+    border-bottom: 1px solid #ddd; /* Light border between rows */
+}
+
+.data-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2; /* Light grey background for even rows */
+}
+
+.data-table tbody tr:hover {
+    background-color: #e0e0e0; /* Hover effect for rows */
+}
+
+.data-table tbody td {
+    padding: 10px 15px;
+    vertical-align: top; /* Align text to the top for multi-line content */
+    border-left: 1px solid #eee; /* Light vertical borders */
+    border-right: 1px solid #eee; /* Light vertical borders */
+}
+
+.data-table tbody td:first-child {
+    border-left: none; /* No left border for the first column */
+}
+
+.data-table tbody td:last-child {
+    border-right: none; /* No right border for the last column */
+}
+
+/* Ensure the table itself has rounded corners if desired, or let the shadow define it */
+.data-table {
+    border-radius: 8px; /* Rounded corners for the entire table */
+    overflow: hidden; /* Ensures borders/shadows respect rounded corners */
+}
+
+.data-table tbody td ul li{
+  margin-left: 6px;
 }
