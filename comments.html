@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bicitrónica</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Bicitrónica - Comentarios</title>
+    <link rel="stylesheet" href="style_comments.css">
 </head>
 <body>
     <header class="header">
@@ -29,12 +29,35 @@
             </ul>
         </nav>
     </header>
-    <div class="container">
-        <h1>Heading 1 with Montserrat</h1>
-        <h2>Heading 2 with Montserrat</h2>
-        <h3>Heading 3 with Montserrat</h3>
-        <p>This is a paragraph using the Montserrat font. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        <p>Another paragraph here. You can <a href="#">click this link</a>.</p>
+
+    <div class="container_module">
+        <h1 class="module_title">Deja tu Comentario</h1>
+        
+        <section class="comment-submission-section">
+            <p class="comment-instructions">¡Nos encantaría escuchar tu opinión! Deja un comentario a continuación.</p>
+            <form id="commentForm" action="https://formspree.io/f/xkgbokzz" method="POST" class="comment-form">
+                <div class="form-group">
+                    <label for="commenterName">Tu Nombre:</label>
+                    <input type="text" id="commenterName" name="name" required autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="commentText">Tu Comentario:</label>
+                    <textarea id="commentText" name="comment" rows="5" required autocomplete="off"></textarea>
+                </div>
+                <button type="submit" class="button">Enviar Comentario</button>
+                <p id="formMessage" class="form-message"></p>
+            </form>
+        </section>
+<!--
+        <section class="comments-display-section">
+            <h2>Comentarios Recientes</h2>
+            <div id="commentsList" class="comments-list">
+                <p class="no-comments-yet">Cargando comentarios...</p>
+                </div>
+        </section>
+-->
     </div>
+
+    <script src="script_comments.js"></script>
 </body>
 </html>

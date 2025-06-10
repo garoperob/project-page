@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Saira+Stencil+One&display=swap');
+/* Basic Reset (optional, but good practice) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+  font-family: 'Montserrat', sans-serif; /* Use Montserrat, fallback to generic sans-serif */
+  line-height: 1.6;
+  color: #333; /* Dark gray text color */
+  background-color: #f4f4f4; /* Light gray background */
+}
+
+/* Heading styles */
+h1, h2, h3 {
+  font-weight: 700; /* Use the bold weight */
+  margin-bottom: 15px;
+  color: #222; /* Slightly darker for headings */
+}
+
+.header {
+  background-color: #222222;
+  width: 100%;
+  padding: 15px 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+/*---------------------*/
+.header__menu {
+    list-style: none; /* Quitamos los puntos de la lista */
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    max-width: 960px;
+    margin: 0 auto;
+}
+.title_presentation_logo {
+  font-family: "Audiowide", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #ffffff;
+  font-size: 1.8em; /* Adjusted for better visibility */
+}
+
+/* 1. Contenedor del dropdown: La clave es la posición relativa */
+.dropdown {
+    position: relative; /* Permite posicionar el menú anidado con respecto a este elemento */
+    display: inline-block; /* Asegura que se comporte bien en la línea */
+}
+
+/* 2. El menú desplegable: oculto por defecto y posicionado absolutamente */
+.dropdown-menu {
+    display: none; /* Oculto por defecto */
+    position: absolute; /* Posicionado con respecto al .dropdown */
+    top: 100%; /* Lo coloca justo debajo del elemento padre */
+    left: 0;
+    background-color: #333; /* Un fondo ligeramente más claro que el header */
+    min-width: 200px; /* Ancho mínimo para que se vea bien */
+    list-style: none; /* Quitamos los puntos de la lista */
+    padding: 10px 0;
+    border-radius: 0 0 8px 8px; /* Bordes redondeados solo en la parte inferior */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    z-index: 1; /* Asegura que aparezca por encima de otro contenido */
+}
+
+/* 3. Estilo de los enlaces dentro del dropdown */
+.dropdown-menu li a {
+    color: #f4f4f4;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block; /* Hace que toda el área sea clickeable, no solo el texto */
+    text-align: left;
+    transition: background-color 0.2s ease;
+}
+
+/* 4. Efecto hover para los enlaces del dropdown */
+.dropdown-menu li a:hover {
+    background-color: #555;
+    text-decoration: none; /* Quitamos el subrayado del hover general */
+    color: #fff;
+}
+
+/* 5. La magia: Mostrar el menú cuando se pasa el cursor sobre el contenedor */
+.dropdown:hover .dropdown-menu {
+    display: block; /* Mostramos el menú */
+}
+/*______________________*/
+
+.header__menu__link {
+  text-decoration: none;
+  color: #ffffff;
+  padding: 10px 15px; /* Add padding to links for better hover area */
+  border-radius: 5px; /* Slightly rounded corners for hover */
+  transition: background-color 0.3s ease; /* Smooth transition for hover */
+}
+.header__menu__link:hover {
+  background-color: #555555;
+  text-decoration: none;
+  color: #ffffff
+}
+
+/* Base H1-H3 styles - can be overridden by specific classes */
+h1 {
+  font-size: 2.5em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+/* Paragraph styles */
+p {
+  margin-bottom: 10px;
+  font-weight: 400; /* Use the regular weight */
+}
+
+/* Link styles */
+a {
+  color: #007bff; /* Blue link color */
+  text-decoration: none; /* Remove underline by default */
+}
+
+a:hover {
+  text-decoration: underline; /* Add underline on hover */
+  color: #0056b3; /* Darker blue on hover */
+}
+
+.module_title {
+    font-family: "Audiowide", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #053305; /* Or choose a color that fits your brand better */
+    margin-bottom: 40px; /* Increased margin for more separation */
+    margin-top: 20px; /* Add some top margin to push it down from header if needed */
+    text-align: center; /* Already centered, ensuring it stays so */
+    font-size: 3.2em; /* Made larger for prominence */
+    letter-spacing: 2px; /* Adds space between letters for a distinct look */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2); /* Subtle shadow for depth */
+    padding-bottom: 10px; /* Optional: add a bit of padding at the bottom */
+    border-bottom: 2px solid #007bff; /* Optional: adds a distinct underline */
+    display: block; /* Ensure it behaves as a block element for text-align to work */
+    width: fit-content; /* Make the border/background fit the text width */
+    margin-left: auto; /* Re-center the block if width is fit-content */
+    margin-right: auto;
+}
+
+
+/* --- COMMENTS SECTION STYLES --- */
+.comment-submission-section {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    margin-bottom: 40px;
+}
+
+.comment-instructions {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.comment-form .form-group {
+    margin-bottom: 20px;
+}
+
+.comment-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 700;
+    color: #333;
+}
+
+.comment-form input[type="text"],
+.comment-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    box-sizing: border-box; /* Include padding in width */
+    transition: border-color 0.3s ease;
+}
+
+.comment-form input[type="text"]:focus,
+.comment-form textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.comment-form textarea {
+    resize: vertical; /* Allow vertical resizing */
+}
+
+.comment-form .button {
+    width: auto; /* Allow button to size itself */
+    padding: 12px 25px; /* Adjust padding for button */
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.form-message {
+    margin-top: 15px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.form-message.success {
+    color: #28a745; /* Green for success */
+}
+
+.form-message.error {
+    color: #dc3545; /* Red for error */
+}
+
+/* Comments Display Section */
+.comments-display-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #053305;
+    font-family: "Audiowide", sans-serif;
+    font-size: 2.2em;
+}
+
+.comments-list {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.comment-item {
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+}
+
+.comment-item:last-child {
+    border-bottom: none; /* No border for the last comment */
+}
+
+.comment-meta {
+    font-size: 0.9em;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+.comment-meta strong {
+    color: #333;
+}
+
+.comment-content {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #444;
+}
+
+.no-comments-yet {
+    text-align: center;
+    color: #777;
+    padding: 20px;
+    font-style: italic;
+}
+
+.button {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;   
+}
