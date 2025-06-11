@@ -143,11 +143,15 @@ a:hover {
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-.container_module h2 {
+.container_module h2, .container_module h3 {
     text-align: center; 
     margin-bottom: 30px; 
     color: #053305; 
     font-family: 'Audiowide', sans-serif;
+}
+
+.container_module ul li, .container_module ol li {
+    margin-left: 40px;
 }
 
 .module_title {
@@ -164,6 +168,7 @@ a:hover {
   text-align: justify;
   line-height: 1.6;
   margin-bottom: 30px;
+  margin-left: 40px;
 }
 .module-subtitle{
   text-align: center; 

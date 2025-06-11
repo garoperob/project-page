@@ -94,7 +94,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         for (let i = 1; i < lines.length; i++) {
             const currentLine = lines[i];
-            const values = currentLine.split(',').map(value => value.trim()); 
+            const values = (currentLine.match(/(".*?"|[^",]+)(?=\s*,|\s*$)/g) || [])
+            .map(value => value.replace(/^"|"$/g, '').trim());
+            //const values = currentLine.split(',').map(value => value.trim()); 
             
             // Basic check to skip completely empty lines or malformed rows at the end of file
             if (values.length === 1 && values[0] === '') {
