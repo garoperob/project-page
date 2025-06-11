@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bicitrónica</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Bicitrónica - Celda de manufactura robotizada</title>
+    <link rel="stylesheet" href="style_robotics.css">
 </head>
 <body>
     <header class="header">
@@ -29,12 +29,159 @@
             </ul>
         </nav>
     </header>
-    <div class="container">
-        <h1>Heading 1 with Montserrat</h1>
-        <h2>Heading 2 with Montserrat</h2>
-        <h3>Heading 3 with Montserrat</h3>
-        <p>This is a paragraph using the Montserrat font. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        <p>Another paragraph here. You can <a href="#">click this link</a>.</p>
+
+    <div class="container_module">
+        <h1 class="module_title">Celdas de Manufactura y Robotización</h1>
+        
+        <section class="module_section">
+            <h2>Generalidades</h2>
+            <p>
+                En este momento nos encontramos en la etapa de evaluación comercial y cotización de los 
+                diferentes componentes correspondientes a los subsistemas planteados para el prototipo.
+            </p>
+            <ul>
+                <li>Selección de actuadores y sensores</li>
+                <li> Diseño de la estructura del dispositivo</li>
+                <li>Tolerancias y precisión de movimiento</li>
+                <li> Modos de operación</li>
+                <li>Método de calibración y ajuste</li>
+                <li>Mantenimiento y longevidad</li>
+            </ul>    
+        </section>
+        <section class="module_section">
+            <h2>Selección de etapa de robotización</h2>
+            <p>
+                Para la selección de la etapa más adecuada de la robotización se tuvo en cuenta los
+                procesos llevados acabo, así como los Takt time. A partir de esto, se decidió que las etapas
+                más adecuadas para esto son: soldadura y ensamble de subconjuntos. Sin embargo, debido
+                a los costos del robot de montaje y la poca diferencia con el takt time anterior se optó
+                por robotizar la estación de soldadura, identificando: aplicación, estado de entrada, 
+                estado de salida, takt time y throughput time previstos como se muestra en la tabla
+            </p>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Concepto</th>
+                        <th>Definición</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Aplicación del robot</td>
+                        <td>Soldadura MIG/MAG automatizada en componentes de bicicleta eléctrica</td>
+                    </tr>
+                    <tr>
+                        <td>Estado de entrada</td>
+                        <td>Piezas metálicas preensambladas en fixture o posicionador</td>
+                    </tr>
+                    <tr>
+                        <td>Estado de salida</td>
+                        <td>Subconjunto soldado, listo para inspección o paso a ensamble final</td>
+                    </tr>
+                    <tr>
+                        <td>Takt time previsto</td>
+                        <td>120 segundos por subconjunto</td>
+                    </tr>
+                    <tr>
+                        <td>Throughput time previsto</td>
+                        <td>10 minutos por lote de 5 subconjuntos (incluye colocación y retiro de pieza)</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>
+                Por otro parte, se presenta un BOM de los dispositivos necesarios para la celda
+            </p>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>N°</th>
+                        <th>Componente</th>
+                        <th>Descripción</th>
+                        <th>Precio (USD)</th>
+                        <th>Comentario</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Robot ABB IRB 6400 2.4-120 </td>
+                        <td>Robot industrial 6 ejes, alcance 2.4 m, 120 kg </td>
+                        <td>$ 2,90</td>
+                        <td>Desde eBay</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Controlador ABB S4C </td>
+                        <td>Controlador de robot </td>
+                        <td>Incluido </td>
+                        <td>Viene con el robot</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Posicionador ABB IRBP 750K (usado) </td>
+                        <td>Posicionador rotatorio 2 ejes, 750 kg </td>
+                        <td>$ 4,35</td>
+                        <td>€3,990 + envío estimado ($500)</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Fuente de soldadura MIG/MAG </td>
+                        <td>Equipo Fronius TPS 4000 o Miller Auto 350 </td>
+                        <td>$ 5,00</td>
+                        <td>Mercado internacional</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Alimentador de carrete MIG/MAG </td>
+                        <td>Alimentador motorizado compatible </td>
+                        <td>$ 650</td>
+                        <td>Compatible con fuente Fronius/Miller</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>PLC Siemens</td>
+                        <td> S7-1200 + módulos I/O Control maestro de celda </td>
+                        <td>$ 1,80</td>
+                        <td>Incluye CPU, 32 I/O digitales</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>HMI Siemens KTP700 </td>
+                        <td>Basic Pantalla táctil de operador </td>
+                        <td>$ 480</td>
+                        <td>Compatible con S7-1200</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Sistema de seguridad (barreras ópticas + enclavamientos)</td>
+                        <td>Seguridad perimetral </td>
+                        <td>$ 1,20</td>
+                        <td>2 cortinas ópticas + botoneras</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Sensor de inspección de cordón (opcional) </td>
+                        <td>Cámara o sensor láser </td>
+                        <td>$ 1,50</td>
+                        <td>Solo si deseas control visual en línea</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>Estructura, base, anclajes, cableado </td>
+                        <td>Montaje, bases y cables industriales </td>
+                        <td>$ 1,00</td>
+                        <td>Costo de herramentalización</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>Transporte y nacionalización </td>
+                        <td>Flete marítimo, aduana, impuestos y agente </td>
+                        <td>$ 2,80</td>
+                        <td>Estimado sobre CIF robot + posicionador</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
     </div>
 </body>
 </html>
