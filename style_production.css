@@ -157,6 +157,7 @@ a:hover {
     margin-bottom: 30px; /* Space between sections */
     padding-bottom: 20px; /* Padding at the bottom of each section */
     border-bottom: 1px solid #eee; /* Subtle separator */
+    text-align: justify;
 }
 
 .module_section:last-child {
@@ -195,7 +196,8 @@ a:hover {
 }
 
 .module-content-list li{
-  margin-left: 100px;
+  margin-left: 70px;
+  margin-right: 40px;
 }
 
 .container-wrapper {

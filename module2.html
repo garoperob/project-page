@@ -33,13 +33,68 @@
     <div class="container_module">
         <h1 class="module_title">Gestión de Producción y Automatización</h1>
         <section class="module_section">
+            <h2>Estado actual</h2>
             <p>
                 El análisis de la línea de producción consistió en la realición del VSM como se muestra
                 en la figura de abajo. Esto se hizo para establecer las estaciones iniciales y el
-                comportamiento del fluho del producto con tal de encontrar la etapa donde la automatización
+                comportamiento del flujo del producto con tal de encontrar la etapa donde la automatización
                 y robotización fuera más conveniente
             </p>
             <img src="./assets/VSM.jpeg" alt="VSM" class="value-map">
+            <img src="./assets/plantview_line.jpeg" alt="Vista de planta" class="value-map">
+            <img src="./assets/3Dview_line.jpeg" alt="Vista 3D" class="value-map">
+            <img src="./assets/stats_line.jpeg" alt="Statistics" class="value-map">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Proceso</th>
+                        <th>DISP (%)</th>
+                        <th>OEE = DISP x 0.80 x 0.85 (%)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Recepción de material</td>
+                    <td>95%</td>
+                    <td>64.60%</td>
+                </tr>
+                <tr>
+                    <td>Soldadura</td>
+                    <td>80%</td>
+                    <td>54.40%</td>
+                </tr>
+                <tr>
+                    <td>Instalación Eléctrica 1</td>
+                    <td>82%</td>
+                    <td>55.80%</td>
+                </tr>
+                <tr>
+                    <td>Montaje elementos mecánicos</td>
+                    <td>85%</td>
+                    <td>57.80%</td>
+                </tr>
+                <tr>
+                    <td>Instalación Eléctrica 2</td>
+                    <td>85%</td>
+                    <td>57.80%</td>
+                </tr>
+                <tr>
+                    <td>Instalación de accesorios</td>
+                    <td>85%</td>
+                    <td>57.80%</td>
+                </tr>
+                <tr>
+                    <td>Pruebas funcionales</td>
+                    <td>90%</td>
+                    <td>61.20%</td>
+                </tr>
+                <tr>
+                    <td>Embalaje</td>
+                    <td>90%</td>
+                    <td>61.20%</td>
+                </tr>
+                </tbody>
+            </table>
         </section>
         
         <section class="module_section">
@@ -57,10 +112,92 @@
                 <img src="./assets/pie-chart-production.png" alt="Participación evobike" class="pie-chart">
             </div>
         </section>
+        <section class="module_section">
+            <h2>Estado propuesto</h2>
+            <p>
+                La propuesta de automatización plantea una reestructuración de la línea que incluye estaciones
+                 en paralelo, lo cual permite reducir significativamente los tiempos de producción al evitar 
+                 cuellos de botella y mejorar el flujo del proceso. Esta organización mejora la eficiencia 
+                 operativa y reduce errores gracias a la estandarización de tareas. En particular, se incorporó
+                  una celda robotizada de soldadura, seleccionada estratégicamente debido a que la estación 
+                  de soldadura manual representaba una de las principales restricciones del sistema actual, 
+                  incrementando los tiempos de espera aguas abajo y afectando negativamente la productividad 
+                  global de la línea.
+            </p>
+            <img src="./assets/VSM_enhancement.jpeg" alt="VSM propuesto" class="value-map">
+            <img src="./assets/plantview_line_enhancement.jpeg" alt="Vista de planta propuesta" class="value-map">
+            <img src="./assets/3Dview_line_enhancemnet.jpeg" alt="Vista 3D propuesta" class="value-map">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Proceso</th>
+                        <th>DISP (%)</th>
+                        <th>OEE (%)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Recepción de material</td>
+                        <td>90%</td>
+                        <td>72.90%</td>
+                    </tr>
+                    <tr>
+                        <td>Soldadura</td>
+                        <td>90%</td>
+                        <td>72.90%</td>
+                    </tr>
+                    <tr>
+                        <td>Ensamble eléctrico 1</td>
+                        <td>90%</td>
+                        <td>72.90%</td>
+                    </tr>
+                    <tr>
+                        <td>Ensamble mecánico</td>
+                        <td>90%</td>
+                        <td>72.90%</td>
+                    </tr>
+                    <tr>
+                        <td>Instalación eléctrica 1</td>
+                        <td>90%</td>
+                        <td>72.90%</td>
+                    </tr>
+                    <tr>
+                        <td>Instalación eléctrica 2</td>
+                        <td>90%</td>
+                        <td>72.90%</td>
+                    </tr>
+                    <tr>
+                        <td>Montaje elementos mecánicos</td>
+                        <td>90%</td>
+                        <td>72.90%</td>
+                    </tr>
+                    <tr>
+                        <td>Instalación accesorios</td>
+                        <td>90%</td>
+                        <td>72.90%</td>
+                    </tr>
+                    <tr>
+                        <td>Ensamble accesorios</td>
+                        <td>90%</td>
+                        <td>72.90%</td>
+                    </tr>
+                    <tr>
+                        <td>Pruebas funcionales</td>
+                        <td>90%</td>
+                        <td>72.90%</td>
+                    </tr>
+                    <tr>
+                        <td>Embalaje</td>
+                        <td>90%</td>
+                        <td>72.90%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
 
         <section class="module_section">
             <h2>Objetivos de diseño</h2>
-            <ul>
+            <ul class="module-content-list">
                 <li>
                     Precisión del avance lineal: Se requiere un desplazamiento de alta precisión (0,01 mm), 
                     logrado mediante un tornillo de paso fino y motor paso a paso.
