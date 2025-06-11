@@ -37,7 +37,7 @@
             Este módulo detalla la planificación y ejecución de la línea de producción automatizada. A continuación, se presenta el diagrama de Gantt del proyecto, mostrando las actividades clave, sus duraciones y la secuencia a lo largo del tiempo.
         </p>
 
-        <h2 style="text-align: center; margin-bottom: 30px; color: #053305; font-family: 'Audiowide', sans-serif;">Diagrama de Gantt del Proyecto</h2>
+        <h2>Diagrama de Gantt del Proyecto</h2>
         
         <div class="gantt-chart-wrapper">
             <div class="gantt-chart-container">
@@ -50,12 +50,16 @@
                 </div>
             </div>
         </div>
-        <div class="table-container">
-            <table class="data-table" id="table1">
-                <thead></thead>
-                <tbody></tbody>
-            </table>
-        </div>
+        <section class="data-section">
+            <h2>Tabla EDT</h2>
+            <p class="loading-message" id="loadingMessage1">Cargando datos...</p>
+            <div class="data-table-container">
+                <table id="table1" class="data-table">
+                    <thead></thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </section>
     </div>
     <script src="script_planning.js"></script>
 </body>

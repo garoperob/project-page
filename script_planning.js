@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
         row.appendChild(barWrapper);
         tasksContainer.appendChild(row);
     });
-
+// EDT Table
     // Function to parse CSV text into an object containing headers and data
     function parseCSV(csvText) {
         const lines = csvText.split('\n').filter(line => line.trim() !== '');
