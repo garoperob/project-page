@@ -34,27 +34,61 @@
         <h1 class="module_title">Celdas de Manufactura Robotizadas</h1>
         
         <section class="module_section">
-            <h2>Introducción a las Celdas Robotizadas</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <p>Fringilla est ullamcorper eget nulla facilisi etiam dignissim diam quis. Scelerisque in dictum non consectetur a. Ornare quam viverra orci sagittis eu volutpat odio facilisis. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </section>
-
-        <section class="module_section">
-            <h2>Componentes y Configuración</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam phasellus vestibulum lorem sed risus ultricies tristique nulla aliquet. Quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci. Quam viverra orci sagittis eu volutpat odio facilisis mauris sit. Et magnis dis parturient montes nascetur ridiculus mus mauris vitae.</p>
+            <h2>Generalidades</h2>
+            <p>
+                En este momento nos encontramos en la etapa de evaluación comercial y cotización de los 
+                diferentes componentes correspondientes a los subsistemas planteados para el prototipo.
+            </p>
             <ul>
-                <li>Robots Industriales: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                <li>Sistemas de Visión Artificial: Sed do eiusmod tempor incididunt ut labore et dolore.</li>
-                <li>Dispositivos de Agarre (Grippers): Ut enim ad minim veniam, quis nostrud exercitation.</li>
-                <li>Cintas Transportadoras y Alimentadores: Duis aute irure dolor in reprehenderit in voluptate.</li>
-                <li>Controladores y Software de Programación: Excepteur sint occaecat cupidatat non proident.</li>
-            </ul>
+                <li>Selección de actuadores y sensores</li>
+                <li> Diseño de la estructura del dispositivo</li>
+                <li>Tolerancias y precisión de movimiento</li>
+                <li> Modos de operación</li>
+                <li>Método de calibración y ajuste</li>
+                <li>Mantenimiento y longevidad</li>
+            </ul>    
         </section>
 
         <section class="module_section">
-            <h2>Ventajas y Desafíos</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Convallis posuere morbi leo urna molestie at elementum eu facilisis. Risus feugiat in ante metus dictum at tempor commodo ullamcorper. Enim eu turpis egestas pretium. Massa id neque aliquam vestibulum morbi blandit cursus risus at.</p>
-            <p>Nunc scelerisque viverra mauris in aliquam sem fringilla. Quam pellentesque nec nam aliquam sem et tortor consequat. Sed risus pretium quam vulputate dignissim. Vitae et leo duis ut diam quam nulla. Enim blandit volutpat maecenas volutpat blandit aliquam etiam erat. Velit euismod in pellentesque massa placerat duis ultricies lacus sed.</p>
+            <h2>Selección de etapa de robotización</h2>
+            <p>
+                Para la selección de la etapa más adecuada de la robotización se tuvo en cuenta los
+                procesos llevados acabo, así como los Takt time. A partir de esto, se decidió que las etapas
+                más adecuadas para esto son: soldadura y ensamble de subconjuntos. Sin embargo, debido
+                a los costos del robot de montaje y la poca diferencia con el takt time anterior se optó
+                por robotizar la estación de soldadura, identificando: aplicación, estado de entrada, 
+                estado de salida, takt time y throughput time previstos como se muestra en la tabla
+            </p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Concepto</th>
+                        <th>Definición</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Aplicación del robot</td>
+                        <td>Soldadura MIG/MAG automatizada en componentes de bicicleta eléctrica</td>
+                    </tr>
+                    <tr>
+                        <td>Estado de entrada</td>
+                        <td>Piezas metálicas preensambladas en fixture o posicionador</td>
+                    </tr>
+                    <tr>
+                        <td>Estado de salida</td>
+                        <td>Subconjunto soldado, listo para inspección o paso a ensamble final</td>
+                    </tr>
+                    <tr>
+                        <td>Takt time previsto</td>
+                        <td>120 segundos por subconjunto</td>
+                    </tr>
+                    <tr>
+                        <td>Throughput time previsto</td>
+                        <td>10 minutos por lote de 5 subconjuntos (incluye colocación y retiro de pieza)</td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
     </div>
 </body>

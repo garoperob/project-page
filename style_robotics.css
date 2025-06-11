@@ -157,6 +157,8 @@ a:hover {
     margin-bottom: 30px; /* Space between sections */
     padding-bottom: 20px; /* Padding at the bottom of each section */
     border-bottom: 1px solid #eee; /* Subtle separator */
+    margin-left: 40px;
+    margin-right: 40px;
 }
 
 .module_section:last-child {
@@ -166,14 +168,16 @@ a:hover {
 }
 
 .module_section h2 {
-    color: #222; /* Consistent heading color */
+    color:#053305; /* Consistent heading color */
     margin-bottom: 15px;
     font-size: 1.8em;
+    font-family: "Audiowide", sans-serif;
 }
 
 .module_section p {
     margin-bottom: 15px;
     line-height: 1.7;
+    text-align: justify;
 }
 
 .module_section ul {
@@ -184,4 +188,5 @@ a:hover {
 
 .module_section ul li {
     margin-bottom: 8px;
+    margin-left: 40px;
 }
