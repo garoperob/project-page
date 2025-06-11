@@ -1,0 +1,32 @@
+Task,Start_Week,Semanas de duración,Horas Totales,Precio de hora,Costo Actividad (COP)
+Definir objetivos y alcance,1,1,48, $  43.000 , $  2.064.000 
+Identificar stakeholders,1,1,48, $  20.000 , $  960.000 
+Elaborar cronograma inicial,2,1,48, $  20.000 , $  960.000 
+Estimar demanda anual,1,1,48, $  20.000 , $  960.000 
+Planificar recursos e infraestructura,1,2,96, $  20.000 , $  1.920.000 
+Planificación de capacidad,2,1,48, $  20.000 , $  960.000 
+Calcular costos de inversión,3,"0,5",24, $  25.000 , $  600.000 
+Estimar costos operativos,3,"0,5",24, $  25.000 , $  600.000 
+Mapeo de flujo de valor (VSM),4,"0,5",24, $  43.000 , $  1.032.000 
+Identificar desperdicios clave,4,"0,5",24, $  25.000 , $  600.000 
+Modelado del gemelo digital,5,1,48, $  25.000 , $  1.200.000 
+Validación y simulación digital,6,1,48, $  25.000 , $  1.200.000 
+Diseño de célula robotizada,7,1,48, $  25.000 , $  1.200.000 
+Instalación y puesta en marcha,8,1,48, $  25.000 , $  1.200.000 
+Selección de software SCADA,7,1,48, $  27.000 , $  1.296.000 
+Configuración inicial,8,1,48, $  27.000 , $  1.296.000 
+Instalación sensores,9,1,48, $  27.000 , $  1.296.000 
+Integración plataforma de datos,10,1,48, $  27.000 , $  1.296.000 
+Recepción y verificación de componentes,11,1,48, $  27.000 , $  1.296.000 
+Programación de robot de soldadura,12,0.5,24, $  27.000 , $  648.000 
+Pruebas de cordones y parámetros,13,0.5,24, $  27.000 , $  648.000 
+Montaje de subensambles mecánicos,14,1,48, $  31.000 , $  1.488.000 
+Instalación de accesorios,15,1,48, $  31.000 , $  1.488.000 
+Cableado principal y arnés,14,1,48, $  31.000 , $  1.488.000 
+Conexiones y testing eléctrico,15,1,48, $  31.000 , $  1.488.000 
+Pruebas dinámicas en banco,16,1,48, $  31.000 , $  1.488.000 
+Análisis de resultados,16,0.5,24, $  43.000 , $  1.032.000 
+Preparación de empaques,17,0.5,24, $  31.000 , $  744.000 
+Empaquetado final,"17,5",0.5,24, $  31.000 , $  744.000 
+,,,,,
+TOTAL SUELDOS, $  33.192.000 ,,,,

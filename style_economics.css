@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Saira+Stencil+One&display=swap');
+/* Basic Reset (optional, but good practice) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+  font-family: 'Montserrat', sans-serif; /* Use Montserrat, fallback to generic sans-serif */
+  line-height: 1.6;
+  color: #333; /* Dark gray text color */
+  background-color: #f4f4f4; /* Light gray background */
+}
+
+/* Heading styles */
+h1, h2, h3 {
+  font-weight: 700; /* Use the bold weight */
+  margin-bottom: 15px;
+  color: #222; /* Slightly darker for headings */
+}
+
+.header {
+  background-color: #222222;
+  width: 100%;
+  padding: 15px 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+/*---------------------*/
+.header__menu {
+    list-style: none; /* Quitamos los puntos de la lista */
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    max-width: 960px;
+    margin: 0 auto;
+}
+.title_presentation_logo {
+  font-family: "Audiowide", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #ffffff;
+  font-size: 1.8em; /* Adjusted for better visibility */
+}
+
+/* 1. Contenedor del dropdown: La clave es la posición relativa */
+.dropdown {
+    position: relative; /* Permite posicionar el menú anidado con respecto a este elemento */
+    display: inline-block; /* Asegura que se comporte bien en la línea */
+}
+
+/* 2. El menú desplegable: oculto por defecto y posicionado absolutamente */
+.dropdown-menu {
+    display: none; /* Oculto por defecto */
+    position: absolute; /* Posicionado con respecto al .dropdown */
+    top: 100%; /* Lo coloca justo debajo del elemento padre */
+    left: 0;
+    background-color: #333; /* Un fondo ligeramente más claro que el header */
+    min-width: 200px; /* Ancho mínimo para que se vea bien */
+    list-style: none; /* Quitamos los puntos de la lista */
+    padding: 10px 0;
+    border-radius: 0 0 8px 8px; /* Bordes redondeados solo en la parte inferior */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    z-index: 1; /* Asegura que aparezca por encima de otro contenido */
+}
+
+/* 3. Estilo de los enlaces dentro del dropdown */
+.dropdown-menu li a {
+    color: #f4f4f4;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block; /* Hace que toda el área sea clickeable, no solo el texto */
+    text-align: left;
+    transition: background-color 0.2s ease;
+}
+
+/* 4. Efecto hover para los enlaces del dropdown */
+.dropdown-menu li a:hover {
+    background-color: #555;
+    text-decoration: none; /* Quitamos el subrayado del hover general */
+    color: #fff;
+}
+
+/* 5. La magia: Mostrar el menú cuando se pasa el cursor sobre el contenedor */
+.dropdown:hover .dropdown-menu {
+    display: block; /* Mostramos el menú */
+}
+/*______________________*/
+
+.header__menu__link {
+  text-decoration: none;
+  color: #ffffff;
+  padding: 10px 15px; /* Add padding to links for better hover area */
+  border-radius: 5px; /* Slightly rounded corners for hover */
+  transition: background-color 0.3s ease; /* Smooth transition for hover */
+}
+.header__menu__link:hover {
+  background-color: #555555;
+  text-decoration: none;
+  color: #ffffff
+}
+
+/* Base H1-H3 styles - can be overridden by specific classes */
+h1 {
+  font-size: 2.5em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+/* Paragraph styles */
+p {
+  margin-bottom: 10px;
+  font-weight: 400; /* Use the regular weight */
+}
+
+/* Link styles */
+a {
+  color: #007bff; /* Blue link color */
+  text-decoration: none; /* Remove underline by default */
+}
+
+a:hover {
+  text-decoration: underline; /* Add underline on hover */
+  color: #0056b3; /* Darker blue on hover */
+}
+.module_title {
+  font-family: "Audiowide", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #053305;
+  margin-top: 20px; /* Remove top margin for consistency */
+  margin-bottom: 20px; /* Remove top margin for consistency */
+  text-align: center; /* This will center the title */
+}
+/* NEW/UPDATED: Styles for the project description text */
+.project-description-text {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    margin: 40px auto; /* Adds top/bottom margin, and centers horizontally */
+    max-width: 900px; /* Limit the width for better readability */
+    text-align: justify; /* Justify the text */
+    line-height: 1.6; /* Improve readability with more line spacing */
+}
+/* Add these rules to your existing style.css file */
+
+.project-description-text ul {
+    margin-left: 25px; /* Adjust this value for more or less indentation */
+    padding-left: 0;   /* Resets default padding if needed, allowing margin-left to control indentation */
+    list-style-type: disc; /* Ensures standard bullet points are displayed */
+}
+
+.project-description-text ul li {
+    margin-bottom: 8px; /* Adds a small vertical space between each list item for readability */
+}
+/* Add styling for your tables if not already in style.css */
+.data-section {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    margin-bottom: 40px;
+}
+.data-section h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #053305;
+    font-family: "Audiowide", sans-serif;
+    font-size: 2.2em;
+}
+.table-container {
+    overflow-x: auto; /* Ensures tables are scrollable on small screens */
+    margin-bottom: 40px;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse; /* Collapses borders between cells */
+    margin: 20px 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.data-table thead th {
+    background-color: #053305; /* Dark green background for header */
+    color: #fff; /* White text for header */
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 2px solid #031c03; /* Slightly darker border for header */
+}
+
+.data-table tbody tr {
+    border-bottom: 1px solid #ddd; /* Light border between rows */
+}
+
+.data-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2; /* Light grey background for even rows */
+}
+
+.data-table tbody tr:hover {
+    background-color: #e0e0e0; /* Hover effect for rows */
+}
+
+.data-table tbody td {
+    padding: 10px 15px;
+    vertical-align: top; /* Align text to the top for multi-line content */
+    border-left: 1px solid #eee; /* Light vertical borders */
+    border-right: 1px solid #eee; /* Light vertical borders */
+}
+
+.data-table tbody td:first-child {
+    border-left: none; /* No left border for the first column */
+}
+
+.data-table tbody td:last-child {
+    border-right: none; /* No right border for the last column */
+}
+
+/* Ensure the table itself has rounded corners if desired, or let the shadow define it */
+.data-table {
+    border-radius: 8px; /* Rounded corners for the entire table */
+    overflow: hidden; /* Ensures borders/shadows respect rounded corners */
+}
+
+/* --- Styles for the data-table-container (for centering) --- */
+  .data-table-container {
+      width: fit-content; /* Adjust as needed, e.g., 500px, 80% */
+      margin-left: auto;
+      margin-right: auto;
+      /* Add padding/shadow if you want the container itself styled */
+      /* padding: 15px; */
+      /* box-shadow: 0 2px 5px rgba(0,0,0,0.1); */
+      /* background-color: #fff; */
+  }
+
+  /* --- Specific Styles for #table4 (to get the green header and row headers) --- */
+  #table4 {
+      border-collapse: collapse;
+      width: 100%; /* Make sure table fills its container */
+      margin: 0; /* Remove default margin from .data-table as container adds it */
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.9em;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      overflow: hidden; /* Important for rounded corners with collapsed borders */
+  }
+
+  /* Styling for ALL cells within #table4 (overrides .data-table defaults) */
+  #table4 th,
+  #table4 td {
+      border: 1px solid #ccc; /* Light border for all cells */
+      padding: 10px 15px; /* Consistent padding */
+      text-align: left; /* Default alignment */
+      vertical-align: middle; /* Center content vertically */
+      background-color: #fff; /* Default white background for data cells */
+      color: #333; /* Default text color */
+  }
+
+  /* GREEN FILL for the TOP HEADER ROW (Concept, Valor) in #table4 */
+  #table4 thead th {
+      background-color: #053305; /* Your dark green */
+      color: #fff; /* White text */
+      font-weight: bold;
+      text-align: center; /* Center the top headers */
+      border-bottom: 2px solid #031c03; /* Darker border */
+  }
+
+  /* Styling for the ROW HEADERS (Tasa, VNA, etc.) in #table4's tbody */
+  #table4 tbody th {
+      background-color: #e6e6e6; /* Light grey background for row headers */
+      color: #333;
+      font-weight: bold;
+      text-align: right; /* Align row headers to the right */
+      border-right: 1px solid #ccc; /* Separator from data cells */
+      border-left: none; /* No left border if desired */
+  }
+
+  /* Alternating row colors for data rows in #table4's tbody */
+  #table4 tbody tr:nth-child(even) {
+      background-color: #f9f9f9; /* Very light grey for even rows */
+  }
+
+  /* Hover effect for rows in #table4 */
+#table4 tbody tr:hover th,
+#table4 tbody tr:hover td {
+    background-color: #e0e0e0; /* Your desired hover color */
+    /* You might need !important if other background rules are very specific,
+       but usually, this selector is specific enough. */
+    /* background-color: #e0e0e0 !important; */
+}
+  /* Ensure no unwanted borders are removed */
+  #table4 tbody td:first-child {
+      border-left: 1px solid #eee; /* Keep a light border */
+  }
+  #table4 tbody td:last-child {
+      border-right: 1px solid #eee; /* Keep a light border */
+  }
+
+.data-table tbody td ul li{
+  margin-left: 6px;
+}
+.loading-message, .error-message {
+    text-align: center;
+    margin-top: 20px;
+    font-style: italic;
+    color: #555;
+}
+.error-message {
+    color: red;
+}
+/* NEW STYLES FOR SIDE-BY-SIDE LAYOUT - add these to your style.css */
+.side-by-side-tables-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows tables to stack on smaller screens */
+    justify-content: space-around; /* Distributes space around items */
+    gap: 20px; /* Space between the two sections */
+    margin-top: 40px; /* Space from the table above */
+    margin-bottom: 40px; /* Space below this container */
+}
+
+.side-by-side-tables-container .data-section {
+    flex: 1; /* Allows sections to grow and shrink */
+    min-width: 45%; /* Ensures they don't get too narrow, allows for gap */
+    max-width: 48%; /* Adjust as needed, considering the gap */
+    margin-bottom: 0; /* Remove bottom margin from individual sections within this container */
+}
+
+/* Optional: Adjust table font size for smaller side-by-side tables if needed */
+.side-by-side-tables-container .data-table th,
+.side-by-side-tables-container .data-table td {
+    font-size: 0.85em; /* Slightly smaller text if they look cramped */
+}
+
+.module-subtitle {
+   font-family: "Audiowide", sans-serif; 
+   color:#053305;
+   text-align: center;
+}
+
