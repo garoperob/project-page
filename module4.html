@@ -31,7 +31,7 @@
     </header>
 
     <div class="container_module">
-        <h1 class="module_title">Celdas de Manufactura Robotizadas</h1>
+        <h1 class="module_title">Celdas de Manufactura y Robotización</h1>
         
         <section class="module_section">
             <h2>Generalidades</h2>
@@ -48,7 +48,6 @@
                 <li>Mantenimiento y longevidad</li>
             </ul>    
         </section>
-
         <section class="module_section">
             <h2>Selección de etapa de robotización</h2>
             <p>
@@ -59,7 +58,7 @@
                 por robotizar la estación de soldadura, identificando: aplicación, estado de entrada, 
                 estado de salida, takt time y throughput time previstos como se muestra en la tabla
             </p>
-            <table>
+            <table class="data-table">
                 <thead>
                     <tr>
                         <th>Concepto</th>
@@ -86,6 +85,99 @@
                     <tr>
                         <td>Throughput time previsto</td>
                         <td>10 minutos por lote de 5 subconjuntos (incluye colocación y retiro de pieza)</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>
+                Por otro parte, se presenta un BOM de los dispositivos necesarios para la celda
+            </p>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>N°</th>
+                        <th>Componente</th>
+                        <th>Descripción</th>
+                        <th>Precio (USD)</th>
+                        <th>Comentario</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Robot ABB IRB 6400 2.4-120 </td>
+                        <td>Robot industrial 6 ejes, alcance 2.4 m, 120 kg </td>
+                        <td>$ 2,90</td>
+                        <td>Desde eBay</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Controlador ABB S4C </td>
+                        <td>Controlador de robot </td>
+                        <td>Incluido </td>
+                        <td>Viene con el robot</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Posicionador ABB IRBP 750K (usado) </td>
+                        <td>Posicionador rotatorio 2 ejes, 750 kg </td>
+                        <td>$ 4,35</td>
+                        <td>€3,990 + envío estimado ($500)</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Fuente de soldadura MIG/MAG </td>
+                        <td>Equipo Fronius TPS 4000 o Miller Auto 350 </td>
+                        <td>$ 5,00</td>
+                        <td>Mercado internacional</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Alimentador de carrete MIG/MAG </td>
+                        <td>Alimentador motorizado compatible </td>
+                        <td>$ 650</td>
+                        <td>Compatible con fuente Fronius/Miller</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>PLC Siemens</td>
+                        <td> S7-1200 + módulos I/O Control maestro de celda </td>
+                        <td>$ 1,80</td>
+                        <td>Incluye CPU, 32 I/O digitales</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>HMI Siemens KTP700 </td>
+                        <td>Basic Pantalla táctil de operador </td>
+                        <td>$ 480</td>
+                        <td>Compatible con S7-1200</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Sistema de seguridad (barreras ópticas + enclavamientos)</td>
+                        <td>Seguridad perimetral </td>
+                        <td>$ 1,20</td>
+                        <td>2 cortinas ópticas + botoneras</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Sensor de inspección de cordón (opcional) </td>
+                        <td>Cámara o sensor láser </td>
+                        <td>$ 1,50</td>
+                        <td>Solo si deseas control visual en línea</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>Estructura, base, anclajes, cableado </td>
+                        <td>Montaje, bases y cables industriales </td>
+                        <td>$ 1,00</td>
+                        <td>Costo de herramentalización</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>Transporte y nacionalización </td>
+                        <td>Flete marítimo, aduana, impuestos y agente </td>
+                        <td>$ 2,80</td>
+                        <td>Estimado sobre CIF robot + posicionador</td>
                     </tr>
                 </tbody>
             </table>
