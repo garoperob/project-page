@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bicitrónica</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Bicitrónica - Gestión de Producción y Automatización</title>
+    <link rel="stylesheet" href="style_production.css">
 </head>
 <body>
     <header class="header">
@@ -29,12 +29,426 @@
             </ul>
         </nav>
     </header>
-    <div class="container">
-        <h1>Heading 1 with Montserrat</h1>
-        <h2>Heading 2 with Montserrat</h2>
-        <h3>Heading 3 with Montserrat</h3>
-        <p>This is a paragraph using the Montserrat font. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        <p>Another paragraph here. You can <a href="#">click this link</a>.</p>
+
+    <div class="container_module">
+        <h1 class="module_title">Gestión de Producción y Automatización</h1>
+        <section class="module_section">
+            <h2>Estado actual</h2>
+            <p>
+                El análisis de la línea de producción consistió en la realición del VSM como se muestra
+                en la figura de abajo. Esto se hizo para establecer las estaciones iniciales y el
+                comportamiento del flujo del producto con tal de encontrar la etapa donde la automatización
+                y robotización fuera más conveniente
+            </p>
+            <img src="./assets/VSM.jpeg" alt="VSM" class="value-map">
+            <img src="./assets/plantview_line.jpeg" alt="Vista de planta" class="value-map">
+            <img src="./assets/3Dview_line.jpeg" alt="Vista 3D" class="value-map">
+            <img src="./assets/stats_line.jpeg" alt="Statistics" class="value-map">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Proceso</th>
+                        <th>DISP (%)</th>
+                        <th>OEE = DISP x 0.80 x 0.85 (%)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Recepción de material</td>
+                    <td>95%</td>
+                    <td>64.60%</td>
+                </tr>
+                <tr>
+                    <td>Soldadura</td>
+                    <td>80%</td>
+                    <td>54.40%</td>
+                </tr>
+                <tr>
+                    <td>Instalación Eléctrica 1</td>
+                    <td>82%</td>
+                    <td>55.80%</td>
+                </tr>
+                <tr>
+                    <td>Montaje elementos mecánicos</td>
+                    <td>85%</td>
+                    <td>57.80%</td>
+                </tr>
+                <tr>
+                    <td>Instalación Eléctrica 2</td>
+                    <td>85%</td>
+                    <td>57.80%</td>
+                </tr>
+                <tr>
+                    <td>Instalación de accesorios</td>
+                    <td>85%</td>
+                    <td>57.80%</td>
+                </tr>
+                <tr>
+                    <td>Pruebas funcionales</td>
+                    <td>90%</td>
+                    <td>61.20%</td>
+                </tr>
+                <tr>
+                    <td>Embalaje</td>
+                    <td>90%</td>
+                    <td>61.20%</td>
+                </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <section class="module_section">
+            <p>
+                Para el mercado actual de bicicletas eléctricas se tiene una producción aproximada anual 
+                del 15.000 unidades con un incremento del 10% anual debido a las proyecciones y al 
+                crecimiento en el mercado de estos productos.
+            </p>
+            <h2>Unidades</h2>
+            <div class="container-wrapper">
+                <ul>
+                    <li><strong>Objetivo actual:</strong> ~10% (1.500 unidades/año)</li>
+                    <li><strong>Objetivo a tres años:</strong> ~15% → 2.250 unidades/año</li>
+                </ul>
+                <img src="./assets/pie-chart-production.png" alt="Participación evobike" class="pie-chart">
+            </div>
+        </section>
+        <section class="module_section">
+            <h2>Estado propuesto</h2>
+            <p>
+                La propuesta de automatización plantea una reestructuración de la línea que incluye estaciones
+                 en paralelo, lo cual permite reducir significativamente los tiempos de producción al evitar 
+                 cuellos de botella y mejorar el flujo del proceso. Esta organización mejora la eficiencia 
+                 operativa y reduce errores gracias a la estandarización de tareas. En particular, se incorporó
+                  una celda robotizada de soldadura, seleccionada estratégicamente debido a que la estación 
+                  de soldadura manual representaba una de las principales restricciones del sistema actual, 
+                  incrementando los tiempos de espera aguas abajo y afectando negativamente la productividad 
+                  global de la línea.
+            </p>
+            <img src="./assets/VSM_enhancement.jpeg" alt="VSM propuesto" class="value-map">
+            <img src="./assets/plantview_line_enhancement.jpeg" alt="Vista de planta propuesta" class="value-map">
+            <img src="./assets/3Dview_line_enhancemnet.jpeg" alt="Vista 3D propuesta" class="value-map">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Proceso</th>
+                        <th>DISP (%)</th>
+                        <th>OEE (%)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Recepción de material</td>
+                        <td>90%</td>
+                        <td>72.90%</td>
+                    </tr>
+                    <tr>
+                        <td>Soldadura</td>
+                        <td>90%</td>
+                        <td>72.90%</td>
+                    </tr>
+                    <tr>
+                        <td>Ensamble eléctrico 1</td>
+                        <td>90%</td>
+                        <td>72.90%</td>
+                    </tr>
+                    <tr>
+                        <td>Ensamble mecánico</td>
+                        <td>90%</td>
+                        <td>72.90%</td>
+                    </tr>
+                    <tr>
+                        <td>Instalación eléctrica 1</td>
+                        <td>90%</td>
+                        <td>72.90%</td>
+                    </tr>
+                    <tr>
+                        <td>Instalación eléctrica 2</td>
+                        <td>90%</td>
+                        <td>72.90%</td>
+                    </tr>
+                    <tr>
+                        <td>Montaje elementos mecánicos</td>
+                        <td>90%</td>
+                        <td>72.90%</td>
+                    </tr>
+                    <tr>
+                        <td>Instalación accesorios</td>
+                        <td>90%</td>
+                        <td>72.90%</td>
+                    </tr>
+                    <tr>
+                        <td>Ensamble accesorios</td>
+                        <td>90%</td>
+                        <td>72.90%</td>
+                    </tr>
+                    <tr>
+                        <td>Pruebas funcionales</td>
+                        <td>90%</td>
+                        <td>72.90%</td>
+                    </tr>
+                    <tr>
+                        <td>Embalaje</td>
+                        <td>90%</td>
+                        <td>72.90%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="module_section">
+            <h2>Objetivos de diseño</h2>
+            <ul class="module-content-list">
+                <li>
+                    Precisión del avance lineal: Se requiere un desplazamiento de alta precisión (0,01 mm), 
+                    logrado mediante un tornillo de paso fino y motor paso a paso.
+                </li>                
+                <li>
+                    Grados de libertad: El sistema debe tener al menos tres grados de libertad 
+                    automatizados: un eje lineal (Z) y dos rotacionales (X e Y), controlados 
+                    con motores paso a paso.
+                </li>
+                <li>
+                    Velocidad del esmeril: Se necesita control de velocidad variable entre
+                     500 y 5000 rpm, adaptable a distintas etapas del tallado, usando un
+                      variador de frecuencia o modulación PWM.
+                </li>
+                <li>
+                    Rigidez estructural: La estructura debe mantener una deflexión menor a
+                     0,1 mm bajo carga, utilizando perfiles metálicos o impresiones 3D reforzadas.
+                </li>
+                <li>
+                    Automatización: El sistema estará controlado por un microcontrolador, 
+                    gestionando motores, parámetros operativos y permitiendo la incorporación 
+                    de sensores o control manual/semi-automático.
+                </li>
+            </ul>
+        </section>
+        <p>
+            A partir del VSM, se propone una descripción concreta de las estaciones de trabajo para la
+            línea de producción de bicicletas eléctricas, incluyendo los elementos clave, equipos
+            necesarios y grado de automatización en cada una:
+        </p>
+        <h2 class="module-subtitle">Descripción de Estaciones de la Línea de Producción</h2>
+        <div class="table-container">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Estación</th>
+                        <th>Tipo de estación</th>
+                        <th>Elementos / Equipos</th>
+                        <th>Mano de obra</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Recepción de Material</td>
+                        <td>Manual + escaneo automatizado</td>
+                        <td>
+                            <ul>
+                                <li>Estanterías móviles y racks etiquetados</li>
+                                <li>Báscula electrónica industrial (verificación de peso)</li>
+                                <li>Lectores RFID o códigos QR</li>
+                                <li>SCADA con HMI para registro de lote y estado</li>
+                            </ul>
+                        </td>
+                        <td>1 operario logístico</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Estación de Soldadura (Celda Robotizada) (Se puede usar lo mismo del taller)</td>
+                        <td>Automatizada (robot industrial)</td>
+                        <td>
+                            <ul>
+                                <li>Robot ABB IRB 1600 o 2600 con antorcha MIG/TIG</li>
+                                <li>Posicionador motorizado (2 ejes)</li>
+                                <li>Fuente de soldadura Fronius TPS/i o equivalente</li>
+                                <li>Extractor de humos automatizado</li>
+                                <li>PLC y panel HMI (control y seguridad)</li>
+                                <li>Cámaras o sensores para visión artificial (opcional)</li>
+                            </ul>
+                        </td>
+                        <td>1 técnico de mantenimiento/programación</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Instalación Eléctrica 1</td>
+                        <td>Semiautomatizada</td>
+                        <td>
+                            <ul>
+                                <li>Banco de armado con soporte giratorio para cuadro</li>
+                                <li>Herramientas de presión para fijación de conectores</li>
+                                <li>Plantilla de tendido de arneses (fixtures)</li>
+                                <li>Multímetro digital + escáner CAN para diagnóstico básico</li>
+                                <li>Sistema de iluminación y señalización de errores (andon)</li>
+                            </ul>
+                        </td>
+                        <td>2 técnicos eléctricos</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Montaje de Elementos Mecánicos</td>
+                        <td>Manual asistida</td>
+                        <td>
+                            <ul>
+                                <li>Herramientas neumáticas/eléctricas (atornilladores, prensas)</li>
+                                <li>Fixture para cuadro y piezas móviles</li>
+                                <li>Banco ergonómico con organización por kits</li>
+                                <li>Sensor de torque conectado a SCADA</li>
+                            </ul>
+                        </td>
+                        <td>2 operarios mecánicos</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Instalación Eléctrica 2</td>
+                        <td>Manual</td>
+                        <td>
+                            <ul>
+                                <li>Fixture de montaje para puños, LED, display</li>
+                                <li>Pistola de aire y multímetro</li>
+                                <li>Tarjeta de validación rápida (plug-test)</li>
+                            </ul>
+                        </td>
+                        <td>1 técnico eléctrico</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Instalación de Accesorios</td>
+                        <td>Manual</td>
+                        <td>
+                            <ul>
+                                <li>Kits organizados por modelo</li>
+                                <li>Herramientas de montaje livianas</li>
+                                <li>Mesa de trabajo modular</li>
+                            </ul>
+                        </td>
+                        <td>1 operario de acabados</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Pruebas Funcionales</td>
+                        <td>Automatizada + operario</td>
+                        <td>
+                            <ul>
+                                <li>Banco de rodillos para pruebas dinámicas</li>
+                                <li>Sensores de torque, velocidad, temperatura</li>
+                                <li>Conexión a sistema SCADA y software diagnóstico CAN/USB</li>
+                                <li>Estación de carga rápida para validación del BMS</li>
+                            </ul>
+                        </td>
+                        <td>1 técnico de pruebas</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Embalaje</td>
+                        <td>Manual con asistencia</td>
+                        <td>
+                            <ul>
+                                <li>Estación de empaquetado con accesorios y protectores</li>
+                                <li>Dispensadores de film, precinto y etiquetas</li>
+                                <li>Escáner para verificación de producto terminado</li>
+                            </ul>
+                        </td>
+                        <td>1 operario logístico</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p>
+            Con base a esto, se presenta una selección de <strong>equipos clave</strong> para cada estación, con
+            <strong>fabricantes y enlaces para cotización o compra:</strong>
+        </p>
+        <h3 class="module-content-subheader">Estación de Soldadura (Celdas Robotizadas) (Se puede usar lo mismo del taller)</h3>
+        <ul class="module-content-list">
+            <li>
+                <strong>ABB MIG Welding Cell (ej. IRB 1600/IRB 2400)</strong><br>
+                Fabricante: ABB via distribuidor R.A.B. Industries<br>
+                <a href="https://robotsdoneright.com" target="_blank">[Ver opción usada - ABB MIG Welding Cell con robot IRB 1600/IRB 2400]</a> (<a href="https://robotsdoneright.com" target="_blank">robotsdoneright.com</a>, <a href="https://rabindustries.com" target="_blank">rabindustries.com</a>)
+            </li>
+            <li>
+                <strong>Robot industrial ABB IRB 4600-20/2.5 + controlador IRC5</strong><br>
+                Fabricante: ABB (usado en eBay: ~$30 000 USD)<br>
+                <a href="https://www.ebay.com" target="_blank">[ABB IRB 4600-20/2.5 con fuente Miller A-450-DI]</a> (<a href="https://www.ebay.com" target="_blank">ebay.com</a>)
+            </li>
+            <li>
+                <strong>Fuente de soldadura Fronius TPS/i (270-600 A)</strong><br>
+                Fabricante: Fronius<br>
+                <a href="https://robainaindustries.com" target="_blank">[Fronius TPS 270i a TPS 600i; ej. TPS 500i por USD 15 675]</a> (<a href="https://robainaindustries.com" target="_blank">robainaindustries.com</a>)
+            </li>
+        </ul>
+
+        <h3 class="module-content-subheader">Estación Virtualización + Integración</h3>
+        <ul class="module-content-list">
+            <li>
+                <strong>PLC + SCADA ABB Ability System 800xA</strong><br>
+                Fabricante: ABB (paquete SCADA/HMI escalable)<br>
+                <a href="https://new.abb.com" target="_blank">[ABB Essential HSI Suite - SCADA PC-based]</a> (<a href="https://new.abb.com" target="_blank">new.abb.com</a>)
+            </li>
+            <li>
+                <strong>Sistemas SCADA local en Colombia</strong><br>
+                Integradores: Injoba Automation (Bogotá), Desisco S.A.S, Isateck<br>
+                <a href="https://injoba.com.co" target="_blank">[Oferta SCADA e integración integral]</a> (<a href="https://injoba.com.co" target="_blank">injoba.com.co</a>)
+            </li>
+        </ul>
+
+        <h3 class="module-content-subheader">Estación de Pruebas Funcionales</h3>
+        <ul class="module-content-list">
+            <li>
+                <strong>Banco de rodillos / banco de pruebas para e-bike</strong><br>
+                Fabricantes: Easyrun Technology (Europe), EMEC-Prototyping<br>
+                <a href="https://dyno-easyrun.com" target="_blank">[Easyrun roller test bench - e-bike end-of-line]</a> (<a href="https://dyno-easyrun.com" target="_blank">dyno-easyrun.com</a>)<br>
+                <a href="https://emitech.fr" target="_blank">[EMEC roller test bench - pruebas dinámicas]</a> (<a href="https://emitech.fr" target="_blank">emitech.fr</a>)<br>
+                <a href="https://weinmann-online.de" target="_blank">[Weinmann bench - rig de fatiga marco conforme ISO/EN]</a> (<a href="https://weinmann-online.de" target="_blank">weinmann-online.de</a>)
+            </li>
+        </ul>
+        <h3 class="module-content-subheader">Estaciones Mecánicas/Eléctricas</h2>
+        <p class="module-description">
+            Para montaje, cableado y embalaje se recomienda adquirir herramientas industriales 
+            manuales o semiautomáticas (atornilladores con control de torque, escáneres CAN, 
+            dispensadores de film), fácilmente disponibles localmente en proveedores de herramientas 
+            industriales o ferreterías especializadas.
+        </p>
+        <h2 class="module-subtitle">Consolidado de Componentes Clave</h2>
+        <div class="table-container">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Elemento clave</th>
+                        <th>Fabricante Ejemplo</th>
+                        <th>Modo de compra</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Robot + celda MIG (Puede ser lo mismo del taller)</td>
+                        <td>ABB (nuevo o usado)</td>
+                        <td>Distribuidor o eBay</td>
+                    </tr>
+                    <tr>
+                        <td>Fuente Fronius TPS-500i</td>
+                        <td>Fronius via Sager S.A. (Bogotá)</td>
+                        <td>Sitio + distribuidor</td>
+                    </tr>
+                    <tr>
+                        <td>SCADA + PLC</td>
+                        <td>ABB Ability 800xA</td>
+                        <td>Integradores locales</td>
+                    </tr>
+                    <tr>
+                        <td>Banco de pruebas e-bike</td>
+                        <td>Easyrun / EMEC / Weinmann</td>
+                        <td>Sitio del fabricante</td>
+                    </tr>
+                    <tr>
+                        <td>Herramientas manuales inteligentes</td>
+                        <td>Varios</td>
+                        <td>Mercado local</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </body>
 </html>
