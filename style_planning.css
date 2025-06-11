@@ -1,0 +1,415 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Saira+Stencil+One&display=swap');
+/* Basic Reset (optional, but good practice) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+  font-family: 'Montserrat', sans-serif; /* Use Montserrat, fallback to generic sans-serif */
+  line-height: 1.6;
+  color: #333; /* Dark gray text color */
+  background-color: #f4f4f4; /* Light gray background */
+}
+
+/* Heading styles */
+h1, h2, h3 {
+  font-weight: 700; /* Use the bold weight */
+  margin-bottom: 15px;
+  color: #222; /* Slightly darker for headings */
+}
+
+.header {
+  background-color: #222222;
+  width: 100%;
+  padding: 15px 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+/*---------------------*/
+.header__menu {
+    list-style: none; /* Quitamos los puntos de la lista */
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    max-width: 960px;
+    margin: 0 auto;
+}
+.title_presentation_logo {
+  font-family: "Audiowide", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #ffffff;
+  font-size: 1.8em; /* Adjusted for better visibility */
+}
+
+/* 1. Contenedor del dropdown: La clave es la posición relativa */
+.dropdown {
+    position: relative; /* Permite posicionar el menú anidado con respecto a este elemento */
+    display: inline-block; /* Asegura que se comporte bien en la línea */
+}
+
+/* 2. El menú desplegable: oculto por defecto y posicionado absolutamente */
+.dropdown-menu {
+    display: none; /* Oculto por defecto */
+    position: absolute; /* Posicionado con respecto al .dropdown */
+    top: 100%; /* Lo coloca justo debajo del elemento padre */
+    left: 0;
+    background-color: #333; /* Un fondo ligeramente más claro que el header */
+    min-width: 200px; /* Ancho mínimo para que se vea bien */
+    list-style: none; /* Quitamos los puntos de la lista */
+    padding: 10px 0;
+    border-radius: 0 0 8px 8px; /* Bordes redondeados solo en la parte inferior */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    z-index: 1; /* Asegura que aparezca por encima de otro contenido */
+}
+
+/* 3. Estilo de los enlaces dentro del dropdown */
+.dropdown-menu li a {
+    color: #f4f4f4;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block; /* Hace que toda el área sea clickeable, no solo el texto */
+    text-align: left;
+    transition: background-color 0.2s ease;
+}
+
+/* 4. Efecto hover para los enlaces del dropdown */
+.dropdown-menu li a:hover {
+    background-color: #555;
+    text-decoration: none; /* Quitamos el subrayado del hover general */
+    color: #fff;
+}
+
+/* 5. La magia: Mostrar el menú cuando se pasa el cursor sobre el contenedor */
+.dropdown:hover .dropdown-menu {
+    display: block; /* Mostramos el menú */
+}
+/*______________________*/
+
+.header__menu__link {
+  text-decoration: none;
+  color: #ffffff;
+  padding: 10px 15px; /* Add padding to links for better hover area */
+  border-radius: 5px; /* Slightly rounded corners for hover */
+  transition: background-color 0.3s ease; /* Smooth transition for hover */
+}
+.header__menu__link:hover {
+  background-color: #555555;
+  text-decoration: none;
+  color: #ffffff
+}
+
+/* Base H1-H3 styles - can be overridden by specific classes */
+h1 {
+  font-size: 2.5em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+/* Paragraph styles */
+p {
+  margin-bottom: 10px;
+  font-weight: 400; /* Use the regular weight */
+}
+
+/* Link styles */
+a {
+  color: #007bff; /* Blue link color */
+  text-decoration: none; /* Remove underline by default */
+}
+
+a:hover {
+  text-decoration: underline; /* Add underline on hover */
+  color: #0056b3; /* Darker blue on hover */
+}
+
+/* --- MODULE CONTAINER STYLES --- */
+.container_module {
+    max-width: 960px;
+    margin: 20px auto; /* Centered with top/bottom margin */
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.container_module h2, .container_module h3 {
+    text-align: center; 
+    margin-bottom: 30px; 
+    color: #053305; 
+    font-family: 'Audiowide', sans-serif;
+}
+
+.container_module ul li, .container_module ol li {
+    margin-left: 40px;
+}
+
+.module_title {
+    font-family: "Audiowide", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #053305; /* Or a color that matches your design */
+    margin-bottom: 30px;
+    text-align: center; /* Center the module title */
+    font-size: 2.8em; /* Adjust size as needed */
+}
+
+.module-description {
+  text-align: justify;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  margin-left: 40px;
+}
+.module-subtitle{
+  text-align: center; 
+  margin-top: 20px; 
+  margin-bottom: 20px; 
+  color: #053305; 
+  font-family: 'Audiowide', sans-serif;
+}
+/* Added for sub-sections within the module content */
+.module-content-subheader {
+    color: #053305;
+    font-family: "Audiowide", sans-serif;
+    font-size: 1.4em;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+.module-content-list {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+.module-content-list ul { /* For nested lists if any */
+    list-style-type: circle;
+    margin-left: 20px;
+}
+.module-content-list li {
+    margin-bottom: 8px;
+}
+.module-content-list a {
+    color: #007bff; /* Standard link color */
+    text-decoration: none;
+}
+.module-content-list a:hover {
+    text-decoration: underline;
+}
+/* style_planning.css */
+
+.gantt-chart-wrapper {
+    position: relative;
+    overflow-x: auto;
+    padding-bottom: 20px; /* Space if horizontal scrollbar appears */
+    /* Remove padding-right as 'Semanas' label is no longer on the right */
+}
+
+.gantt-chart-container {
+    display: grid;
+    grid-template-columns: 200px 1fr; /* 200px for task labels, 1fr for chart area */
+    font-family: 'Montserrat', sans-serif;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    min-width: 900px; /* Adjust as needed for desired chart width */
+}
+
+.gantt-chart-header {
+    grid-column: 1 / -1; /* Spans both columns of the gantt-chart-container */
+    display: grid;
+    /* Define a new grid for the header: Label column (Tarea), then 2 rows for chart area: 'Semanas' title + week numbers */
+    grid-template-columns: subgrid; /* Inherit task label column width */
+    grid-template-rows: auto auto; /* First row for "Semanas" title, second for week numbers */
+    border-bottom: 1px solid #ccc;
+    background-color: #e0e0e0;
+}
+
+.gantt-chart-header-label {
+    grid-column: 1; /* Position in the first column */
+    grid-row: 1 / -1; /* Spans both rows of the header (vertically centered for "Tarea") */
+    font-weight: bold;
+    padding: 10px;
+    border-right: 1px solid #ccc;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gantt-chart-x-axis-label { /* New style for the horizontal 'Semanas' label */
+    grid-column: 2; /* Position in the second column (chart area) */
+    grid-row: 1; /* Position in the first row of the header grid */
+    text-align: center;
+    font-weight: bold;
+    color: #555;
+    font-size: 1.1em;
+    padding-bottom: 5px; /* Space between 'Semanas' and week numbers */
+    border-bottom: 1px solid #ccc; /* Separator line below 'Semanas' */
+    display: flex; /* Use flex to easily center text */
+    align-items: center;
+    justify-content: center;
+}
+
+.gantt-chart-weeks-row {
+    grid-column: 2; /* Position in the second column */
+    grid-row: 2; /* Position in the second row of the header grid */
+    display: grid;
+    grid-template-columns: repeat(21, 1fr); /* **FIXED:** 21 columns for weeks 0 to 20 */
+    text-align: center;
+    font-weight: bold;
+    color: #555;
+    padding: 5px 0;
+    position: relative;
+    /* Vertical lines for every week */
+    background-image: linear-gradient(to right, #eee 1px, transparent 1px);
+    background-size: calc(100% / 20) 100%; /* Line every 1/20th of the width (20 segments) */
+    background-repeat: repeat-x;
+}
+
+.week-label {
+    position: relative;
+    font-size: 0.85em;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.gantt-chart-body {
+    grid-column: 1 / -1; /* Spans both columns */
+    display: grid;
+    grid-template-columns: subgrid; /* Inherits columns from parent */
+}
+
+.gantt-task-row {
+    grid-column: 1 / -1; /* Spans both columns */
+    display: grid;
+    grid-template-columns: subgrid; /* Inherits columns from parent */
+    align-items: flex-start; /* **FIXED:** Align content to the top (for multiline text) */
+    min-height: 35px; /* **FIXED:** Ensure minimum height, but allows to grow */
+    padding-top: 5px; /* Add some top padding */
+    padding-bottom: 5px; /* Add some bottom padding */
+    background-color: #fff;
+    border: 1px solid #eee;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    margin-bottom: 5px; /* Add margin between rows */
+}
+
+.gantt-task-label {
+    grid-column: 1; /* Aligns with the first column */
+    padding: 0 10px;
+    font-weight: bold;
+    color: #333;
+    font-size: 0.9em;
+    /* Remove fixed height, nowrap, overflow, text-overflow to allow wrapping */
+    white-space: normal; /* **FIXED:** Allow text to wrap */
+    overflow: visible; /* **FIXED:** Ensure content is visible */
+    text-overflow: clip; /* **FIXED:** No ellipsis */
+    align-items: flex-start; /* Align label text to top within its own cell */
+    padding-top: 5px; /* Match row padding */
+    padding-bottom: 5px; /* Match row padding */
+    border-right: 1px solid #ccc;
+    background-color: #fff; /* Ensure label background is clear */
+}
+
+.gantt-task-bar-wrapper {
+    grid-column: 2; /* Aligns with the second column */
+    position: relative;
+    height: 100%; /* Allows wrapper to expand with row height */
+    /* Vertical grid lines for tasks area */
+    background-image: linear-gradient(to right, #eee 1px, transparent 1px);
+    background-size: calc(100% / 20) 100%; /* Lines every 1/20th of the width */
+    background-repeat: repeat-x;
+}
+
+.gantt-task-bar {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 25px;
+    background-color: #4CAF50;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    opacity: 0.9;
+    min-width: 5px;
+    z-index: 1;
+}
+
+/* Optional: Add hover effect */
+.gantt-task-bar:hover {
+    opacity: 1;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Add these rules to your existing style_planning.css file */
+
+.table-container {
+    overflow-x: auto; /* Ensures tables are scrollable on small screens */
+    margin-bottom: 40px;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse; /* Collapses borders between cells */
+    margin: 20px 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.data-table thead th {
+    background-color: #053305; /* Dark green background for header */
+    color: #fff; /* White text for header */
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 2px solid #031c03; /* Slightly darker border for header */
+}
+
+.data-table tbody tr {
+    border-bottom: 1px solid #ddd; /* Light border between rows */
+}
+
+.data-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2; /* Light grey background for even rows */
+}
+
+.data-table tbody tr:hover {
+    background-color: #e0e0e0; /* Hover effect for rows */
+}
+
+.data-table tbody td {
+    padding: 10px 15px;
+    vertical-align: top; /* Align text to the top for multi-line content */
+    border-left: 1px solid #eee; /* Light vertical borders */
+    border-right: 1px solid #eee; /* Light vertical borders */
+}
+
+.data-table tbody td:first-child {
+    border-left: none; /* No left border for the first column */
+}
+
+.data-table tbody td:last-child {
+    border-right: none; /* No right border for the last column */
+}
+
+/* Ensure the table itself has rounded corners if desired, or let the shadow define it */
+.data-table {
+    border-radius: 8px; /* Rounded corners for the entire table */
+    overflow: hidden; /* Ensures borders/shadows respect rounded corners */
+}
+
+.data-table tbody td ul li{
+  margin-left: 6px;
+}

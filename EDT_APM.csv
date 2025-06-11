@@ -1,0 +1,56 @@
+ID,Nivel,Actividad,Descripción,Duración (semanas),Responsable(s)
+1,1,"Inicio del Proyecto","Definir objetivos, alcance y recursos iniciales del proyecto",1,CEO; CIO
+1.1,2,Definir objetivos y alcance,Documentar los objetivos estratégicos y técnicos,1,CEO
+1.2,2,Identificar stakeholders,Listar e involucrar a las partes interesadas internas y externas,1,CEO; CFO
+1.3,2,Elaborar cronograma inicial,Planificar las actividades preliminares y estimar sus tiempos,1,CIO
+1.4,2,Estimar demanda anual,Definir volumen estimado de producción de scooters,1,CFO
+1.5,2,Planificar recursos e infraestructura,"Definir espacios, maquinaria, software y personal",1,CEO; CTO (1); CTO (2)
+2,1,Planificación Financiera,Estimar costos de inversión y operativos,1,CFO
+2.1,2,Calcular costos de inversión,Costos fijos iniciales en maquinaria y tecnología,0.5,CFO
+2.2,2,Estimar costos operativos,Costos variables mensuales de operación,0.5,CFO
+3,1,Análisis de Producción,Definir flujo y optimización de procesos,1,CTO (1); CTO (2)
+3.1,2,Mapeo de flujo de valor (VSM),Diagramar procesos actuales y futuros,0.5,CTO (1)
+3.2,2,Identificar desperdicios clave,Localizar ineficiencias en procesos,0.5,CTO (1); CTO (2)
+4,1,Selección de Tecnología,Definir sistemas y software a implementar,1,CIO; CTO (1)
+4.1,2,Selección de software SCADA,Elegir software de monitoreo industrial,1,CIO
+5,1,Ingeniería de Diseño,Diseño de la celda robotizada y gemelo digital,4,CTO (1); CTO (2)
+5.1,2,Diseño de celda robotizada,Planificación de la celda de soldadura automática,2,CTO (1)
+5.2,2,Modelado del gemelo digital,Simulación virtual del proceso,2,CTO (2)
+6,1,Logística de Componentes,Gestión de recepción y verificación de partes,2,CTO (2)
+6.1,2,Recepción y verificación de componentes,"Verificar cantidades, calidad y especificaciones",2,CTO (2)
+7,1,Integración Mecánica y Eléctrica,Ensamble de elementos,4,CTO (1); CTO (2)
+7.1,2,Instalación sensores,Montaje y conexionado de sensores en celda robotizada,0.5,CTO (1)
+7.2,2,Programación robot de soldadura,Parametrización de movimientos y velocidades,0.5,CTO (2)
+7.3,2,Pruebas de cordones y parámetros,Verificar calidad de soldaduras,0.5,CTO (1); CTO (2)
+7.4,2,Conexiones y testing eléctrico,Realizar conexiones eléctricas y pruebas,1,CTO (2)
+7.5,2,Instalación de accesorios,"Montar espejos, frenos, velocímetros, luces, etc.",1,CTO (1)
+8,1,Control de Calidad y Validación,Verificar funcionamiento general y seguridad,1,CTO (1); CTO (2)
+8.1,2,Análisis de resultados,Evaluación del desempeño de cada scooter,0.5,CTO (1); CTO (2)
+9,1,Logística de Despacho,Preparar empaques y realizar entrega final,1,CTO (2)
+9.1,2,Preparación de empaques,Embalaje de scooters terminados,0.5,CTO (2)
+9.2,2,Empaquetado final,"Sellado, etiquetado y despacho",0.5,CTO (2)
+10,1,Capacitación del personal,"Formar al personal en uso de celdas, software SCADA y seguridad",1,CIO; CTO (1); CTO (2)
+10.1,2,Capacitación en SCADA,Entrenamiento en monitoreo y control de procesos,0.5,CIO
+10.2,2,Capacitación en manejo de celdas robotizadas,Operación y programación de robots,0.5,CTO (1); CTO (2)
+11,1,Elaboración de Manuales,Generar documentación técnica y operativa,1,CTO (1); CTO (2); CIO
+11.1,2,Manual de mantenimiento,Instrucciones de inspección y reparación,0.5,CTO (1)
+11.2,2,Manual de operación de SCADA,Uso de software de supervisión,0.5,CIO
+12,1,Auditoría de calidad,Validación externa del sistema productivo,1,CEO; CTO (1)
+13,1,Análisis postventa,Seguimiento a scooters entregadas,1,CFO; CTO (2)
+13.1,2,Levantamiento de incidencias,Registro de fallos o reclamaciones,0.5,CTO (2)
+13.2,2,Análisis de retroalimentación,Revisión de satisfacción y desempeño,0.5,CFO
+14,1,Evaluación de KPIs,Control de indicadores de desempeño operativo,1,CEO; CFO; CTO (1)
+14.1,2,Productividad de celda robotizada,Análisis de ciclos de producción y eficiencia,0.5,CTO (1)
+14.2,2,Calidad de producto terminado,Porcentaje de defectos y calidad de ensamblaje,0.5,CTO (2)
+15,1,Actualización de VSM,Mejoras a procesos tras primera producción,0.5,CTO (1); CTO (2)
+16,1,Plan de mejora continua,Definir nuevas acciones de optimización,0.5,CEO; CTO (1); CTO (2)
+17,1,Gestión de compras internacionales,Cotizar e importar componentes seleccionados,1,CFO; CTO (2)
+17.1,2,Búsqueda de proveedores internacionales,Localizar y cotizar partes clave,0.5,CTO (2)
+17.2,2,Gestión aduanera y logística de importación,"Trámites, fletes y seguros",0.5,CFO
+18,1,Gestión de compras nacionales,Adquirir componentes disponibles localmente,1,CTO (2)
+19,1,Diseño de lay-out de planta,Distribuir áreas de trabajo y logística interna,1,CTO (1)
+20,1,Instalación de software SCADA,Configuración e integración con sistemas de planta,1,CIO
+21,1,Integración de base de datos de producción,Registro de producción y trazabilidad,0.5,CIO
+22,1,Pruebas piloto de producción,Ensamble de unidades en lote de prueba,1,CTO (1); CTO (2)
+23,1,Validación de estándares de seguridad,Cumplimiento de normas técnicas y de seguridad industrial,0.5,CTO (1); CTO (2)
+24,1,Definición de plan de mantenimiento preventivo,Programación de inspecciones y repuestos,0.5,CTO (1)
