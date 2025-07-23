@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Call the function for each table on the data-tables.html page
     loadCSVTable('table1', 'loadingMessage1', 'economics/Proyeccion_Financiera_APM_F.xlsx - Costos Iniciales.csv');
-    loadCSVTable('table2', 'loadingMessage2', 'economics/Componentes.csv');
+    loadCSVTable('table2', 'loadingMessage2', 'economics/Componentes_F.csv');
     loadCSVTable('table3', 'loadingMessage3', 'economics/Proyecciones_5_anios.csv');
     loadCSVTable('table5', 'loadingMessage5', 'economics/Years_sales.csv');
 });
