@@ -23,6 +23,7 @@
                         <li><a href="module5_virtual.html">Virtulización de la fábrica</a></li>
                         <li><a href="module6_control.html">Controladores Industriales</a></li>
                         <li><a href="module7_SCADA.html">Sistema de supervisión SCADA</a></li>
+                        <li><a href="module8_digital.html">Digital Factory</a></li>
                     </ul>
                 </li>
 
@@ -47,15 +48,38 @@
         <section class="module_section">
             <h2>Estado actual</h2>
             <p>
-                El análisis de la línea de producción consistió en la realición del VSM como se muestra
+                El análisis de la línea de producción consiste en la realición del VSM como se muestra
                 en la figura de abajo. Esto se hizo para establecer las estaciones iniciales y el
                 comportamiento del flujo del producto con tal de encontrar la etapa donde la automatización
-                y robotización fuera más conveniente
+                y robotización fuera más conveniente.
+                En este mapeo, Cada etapa está claramente definida y cuenta con indicadores clave como 
+                el tiempo de ciclo (TC), tiempo de cambio de producto (TCP), disponibilidad (DISP), 
+                tiempo disponible (TD), número de turnos, operarios y máquinas.
             </p>
-            <img src="./assets/VSM.jpg" alt="VSM" class="value-map">
-            <img src="./assets/plantview_line.jpeg" alt="Vista de planta" class="value-map">
-            <img src="./assets/3Dview_line.jpeg" alt="Vista 3D" class="value-map">
-            <img src="./assets/stats_line.jpeg" alt="Statistics" class="value-map">
+            <div class="figure-box">
+                <figure>
+                    <img src="./assets/VSM.jpg" alt="VSM" class="value-map">
+                    <figcaption class="figure-caption">Mapa de la situación actual de la línea de producción</figcaption>
+                </figure>
+            </div>
+            <div class="figure-box">
+                <figure>
+                    <img src="./assets/plantview_line.jpeg" alt="Vista de planta" class="value-map">
+                    <figcaption class="figure-caption">Vista de planta de la línea de producción actual</figcaption>
+                </figure>
+            </div>
+            <div class="figure-box">
+                <figure>
+                    <img src="./assets/3Dview_line.jpeg" alt="Vista 3D" class="value-map">
+                    <figcaption class="figure-caption">Vista 3D de la línea de producción actual</figcaption>
+                </figure>
+            </div>
+            <div class="figure-box">
+                <figure>
+                    <img src="./assets/stats_line.jpeg" alt="Statistics" class="value-map">
+                    <figcaption class="figure-caption">Estadísticas de la línea de producción actual</figcaption>
+                </figure>
+            </div>
             <table class="data-table">
                 <thead>
                     <tr>
@@ -107,9 +131,53 @@
                 </tr>
                 </tbody>
             </table>
+            <!-- Fortalezas y Áreas de Mejora dentro de la sección Estado actual -->
+            <div class="strengths-weaknesses">
+                <div>
+                    <h3>Fortalezas:</h3>
+                    <ul>
+                        <li>Flujo secuencial claro y estructurado.</li>
+                        <li>Inclusión de información operativa detallada en cada proceso.</li>
+                        <li>Coordinación centralizada con control y supervisión de producción.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Áreas de mejora:</h3>
+                    <ul>
+                        <li>El Lead Time es elevado (103.5 minutos), lo que indica una acumulación significativa de tiempo no productivo.</li>
+                        <li>El porcentaje de Tiempo con Valor Agregado (TVA) es de 57.5 %, lo que refleja una proporción considerable de actividades que no aportan valor.</li>
+                        <li>Se identifican inventarios intermedios en casi todas las etapas, lo que genera tiempos de espera innecesarios.</li>
+                        <li>Algunos procesos presentan tiempos de ciclo extensos, como soldadura (25 minutos) y montaje de elementos mecánicos (20 minutos).</li>
+                        <li>El balance de carga entre estaciones es deficiente, lo que puede generar cuellos de botella o tiempos ociosos.</li>
+                    </ul>
+                </div>
+            </div>
         </section>
-        
+        <!-- Nueva sección: Fortalezas y Áreas de Mejora -->
         <section class="module_section">
+            <h2>Fortalezas y Áreas de Mejora del Estado Actual</h2>
+            <div class="strengths-weaknesses">
+                <div>
+                    <h3>Fortalezas:</h3>
+                    <ul>
+                        <li>Flujo secuencial claro y estructurado.</li>
+                        <li>Inclusión de información operativa detallada en cada proceso.</li>
+                        <li>Coordinación centralizada con control y supervisión de producción.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Áreas de mejora:</h3>
+                    <ul>
+                        <li>El Lead Time es elevado (103.5 minutos), lo que indica una acumulación significativa de tiempo no productivo.</li>
+                        <li>El porcentaje de Tiempo con Valor Agregado (TVA) es de 57.5 %, lo que refleja una proporción considerable de actividades que no aportan valor.</li>
+                        <li>Se identifican inventarios intermedios en casi todas las etapas, lo que genera tiempos de espera innecesarios.</li>
+                        <li>Algunos procesos presentan tiempos de ciclo extensos, como soldadura (25 minutos) y montaje de elementos mecánicos (20 minutos).</li>
+                        <li>El balance de carga entre estaciones es deficiente, lo que puede generar cuellos de botella o tiempos ociosos.</li>
+                    </ul>
+                </div>            </div>
+        </section>
+        <section class="module_section">
+            <h2>El Objetivo</h2>
             <p>
                 Para el mercado actual de bicicletas eléctricas se tiene una producción aproximada anual 
                 del 15.000 unidades con un incremento del 10% anual debido a las proyecciones y al 
@@ -121,7 +189,12 @@
                     <li><strong>Objetivo actual:</strong> ~10% (1.500 unidades/año)</li>
                     <li><strong>Objetivo a tres años:</strong> ~15% → 2.250 unidades/año</li>
                 </ul>
-                <img src="./assets/pie-chart-production.png" alt="Participación evobike" class="pie-chart">
+                <div class="figure-box">
+                    <figure>
+                        <img src="./assets/pie-chart-production.png" alt="Participación evobike" class="pie-chart">
+                        <figcaption class="figure-caption">Participación de mercado de Evobike</figcaption>
+                    </figure>
+                </div>
             </div>
         </section>
         <section class="module_section">
@@ -136,9 +209,24 @@
                   incrementando los tiempos de espera aguas abajo y afectando negativamente la productividad 
                   global de la línea.
             </p>
-            <img src="./assets/VSM_enhancement.jpeg" alt="VSM propuesto" class="value-map">
-            <img src="./assets/plantview_line_enhancement.jpeg" alt="Vista de planta propuesta" class="value-map">
-            <img src="./assets/3Dview_line_enhancemnet.jpeg" alt="Vista 3D propuesta" class="value-map">
+            <div class="figure-box">
+                <figure>
+                    <img src="./assets/VSM_enhancement.jpeg" alt="VSM propuesto" class="value-map">
+                    <figcaption class="figure-caption">Mapa de la situación propuesta de la línea de producción</figcaption>
+                </figure>
+            </div>
+            <div class="figure-box">
+                <figure>
+                    <img src="./assets/plantview_line_enhancement.jpeg" alt="Vista de planta propuesta" class="value-map">
+                    <figcaption class="figure-caption">Vista de planta de la línea de producción propuesta</figcaption>
+                </figure>
+            </div>
+            <div class="figure-box">
+                <figure>
+                    <img src="./assets/3Dview_line_enhancemnet.jpeg" alt="Vista 3D propuesta" class="value-map">
+                    <figcaption class="figure-caption">Vista 3D de la línea de producción propuesta</figcaption>
+                </figure>
+            </div>
             <table class="data-table">
                 <thead>
                     <tr>
@@ -205,14 +293,89 @@
                     </tr>
                 </tbody>
             </table>
+            <p>
+                La propuesta de mejora reorganiza el proceso de forma modular, permitiendo una ejecución 
+                más eficiente mediante subensambles paralelos y reducción de desperdicios. Se 
+                redistribuyen las operaciones en estaciones especializadas por tipo de componente 
+                (eléctrico alto, eléctrico bajo, mecánico, accesorios), lo que optimiza el flujo de 
+                trabajo.
+            </p>
+            <!-- Fortalezas y Áreas de Mejora del Estado Propuesto -->
+            <div class="strengths-weaknesses">
+                <div>
+                    <h3>Fortalezas:</h3>
+                    <ul>
+                        <li>El Lead Time se reduce a 53 minutos, lo cual representa una mejora significativa del 48.8 % respecto al estado actual.</li>
+                        <li>El TVA aumenta a 65 %, lo que indica una reducción de tiempos improductivos y mayor eficiencia.</li>
+                        <li>La reorganización funcional permite realizar subprocesos en paralelo, mejorando la utilización del tiempo disponible.</li>
+                        <li>Se reduce el número de inventarios intermedios, mejorando el flujo continuo.</li>
+                        <li>Los tiempos de ciclo se acortan en procesos clave: soldadura disminuye de 25 a 8 minutos y pruebas funcionales de 10 a 6 minutos.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Áreas de mejora:</h3>
+                    <ul>
+                        <li>Aún existen puntos con inventario total acumulado, que podrían gestionarse con sistemas pull o kanban.</li>
+                        <li>Algunas estaciones presentan desequilibrios entre TC y TCP que pueden generar sobreproducción.</li>
+                        <li>El tiempo de ciclo en el proceso de embalaje se incrementa ligeramente de 2 a 3 minutos, lo cual requiere un análisis para evitar afectaciones en la salida del producto terminado.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- Comparación General -->
+        <section class="module_section">
+            <h2>Comparación General</h2>
+            <p>
+                A continuación, se presenta una tabla comparativa entre ambos estados:
+            </p>
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Indicador</th>
+                            <th>Estado Actual</th>
+                            <th>Propuesta de Mejora</th>
+                            <th>Mejora</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Lead Time</td>
+                            <td>103.5 min</td>
+                            <td>53 min</td>
+                            <td>Reducción de 48.8 %</td>
+                        </tr>
+                        <tr>
+                            <td>Tiempo con Valor Agregado (TVA)</td>
+                            <td>57.5 %</td>
+                            <td>65 %</td>
+                            <td>Aumento de 7.5 puntos</td>
+                        </tr>
+                        <tr>
+                            <td>Número de puntos de inventario</td>
+                            <td>8 aprox.</td>
+                            <td>5 aprox.</td>
+                            <td>Reducción de inventarios</td>
+                        </tr>
+                        <tr>
+                            <td>Balance de carga</td>
+                            <td>Bajo</td>
+                            <td>Mejorado</td>
+                            <td>Mayor eficiencia</td>
+                        </tr>
+                        <tr>
+                            <td>Organización del proceso</td>
+                            <td>Lineal</td>
+                            <td>Modular/Paralela</td>
+                            <td>Mayor flexibilidad</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
 
 
-        <p>
-            A partir del VSM, se propone una descripción concreta de las estaciones de trabajo para la
-            línea de producción de bicicletas eléctricas, incluyendo los elementos clave, equipos
-            necesarios y grado de automatización en cada una:
-        </p>
+        
         <h2 class="module-subtitle">Descripción de Estaciones de la Línea de Producción</h2>
         <div class="table-container">
             <table class="data-table">

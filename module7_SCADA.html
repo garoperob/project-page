@@ -25,6 +25,7 @@
                         <li><a href="module5_virtual.html">Virtulización de la fábrica</a></li>
                         <li><a href="module6_control.html">Controladores Industriales</a></li>
                         <li><a href="module7_SCADA.html">Sistema de supervisión SCADA</a></li>
+                        <li><a href="module8_digital.html">Digital Factory</a></li>
                     </ul>
                 </li>
 
@@ -47,5 +48,175 @@
         <div class="project-description-text">
             <h1 class="module_title">Sistema de Supervisión SCADA</h1>
             <p></p>
+        </div>
+        <section class="communication-architecture-section">
+            <div class="project-description-text">
+                <h2>Arquitectura de Comunicación para una Fábrica Digital</h2>
+                <div class="figure-box">
+                    <figure>
+                        <img src="./assets/SCADAArch.png" alt="Arquitectura de Comunicación SCADA" class="value-map">
+                        <figcaption class="figure-caption">Arquitectura de comunicación propuesta para la fábrica digital</figcaption>
+                    </figure>
+                </div>
+                <p>
+Esta arquitectura de comunicación ha sido concebida y estructurada con el propósito fundamental de establecer una integración robusta, escalable y segura a través de los diversos niveles operativos de una fábrica digital. El objetivo primordial es facilitar la toma de decisiones informada por datos y la optimización continua de los procesos, desde el control de planta hasta las capacidades de la computación en la nube.
+A continuación, se detallan los componentes y la justificación de cada elección dentro de esta arquitectura:
+                </p>
+                <ul>
+                    <li>
+                        <strong>1. Nivel de Control (PLC y Software de Automatización):</strong><br>
+                        <u>Rockwell Automation (Controladores Lógicos Programables - PLC y Studio 5000):</u> La selección de Rockwell Automation, que incluye sus controladores como ControlLogix o CompactLogix y el entorno de desarrollo Studio 5000, se fundamenta en su probada fiabilidad, su desempeño sobresaliente en entornos industriales y su extendida adopción en el sector manufacturero. Esto asegura una base sólida para el control preciso de los procesos físicos de la fábrica.<br>
+                        <b>Justificación:</b> La solidez y el ecosistema maduro ofrecidos por Rockwell proporcionan la estabilidad imprescindible para las operaciones críticas de la planta. Studio 5000, por su parte, ofrece un entorno de programación y depuración altamente eficiente para los ingenieros de automatización.
+                    </li>
+                    <li>
+                        <strong>2. Comunicación a Nivel de Planta (OPC UA):</strong><br>
+                        <u>OPC UA (Open Platform Communications Unified Architecture):</u> Este estándar ha sido elegido como el pilar de la comunicación entre los PLCs, las estaciones de trabajo (HMI/SCADA) y otros dispositivos a nivel de planta. Su selección se justifica por su inherente interoperabilidad, características de seguridad avanzadas (como cifrado y autenticación) y su capacidad para manejar y modelar información compleja.<br>
+                        <b>Justificación:</b> OPC UA resuelve eficazmente el desafío de la comunicación heterogénea entre sistemas y fabricantes industriales diversos. Su concepción como "arquitectura unificada" lo hace idóneo para la recolección de datos en tiempo real de múltiples fuentes de manera estandarizada, un aspecto crucial para cualquier fábrica digital. La seguridad integrada es un factor crítico para salvaguardar la integridad de los datos de producción.
+                    </li>
+                    <li>
+                        <strong>3. SCADA/HMI y Gestión de Datos (Ignition by Inductive Automation):</strong><br>
+                        <u>Ignition by Inductive Automation:</u> Ignition se posiciona como la plataforma central de SCADA/HMI y la puerta de enlace de datos. Su elección se basa en su flexibilidad, su arquitectura modular basada en web, su modelo de licenciamiento ilimitado (lo que facilita una escalabilidad sin costos prohibitivos por tag o cliente) y su capacidad nativa de conectividad a través de OPC UA.<br>
+                        <b>Justificación:</b> Ignition es fundamental para la visualización y el control de las operaciones de planta. Su despliegue en servidores y accesibilidad desde cualquier dispositivo con navegador web mejora significativamente la flexibilidad operativa. Su potente motor de etiquetas y capacidades de historización lo establecen como un agregador de datos ideal. Adicionalmente, su amplio soporte para diversas bases de datos y la conectividad con sistemas empresariales lo hacen perfecto para el siguiente nivel de integración.
+                    </li>
+                    <li>
+                        <strong>4. Interfaz con Sistemas Empresariales y Análisis (NX - Posiblemente un Sistema MES o ERP/PLM):</strong><br>
+                        <u>NX</u> (se asume que hace referencia a un sistema de gestión empresarial, como un Manufacturing Execution System - MES, un Product Lifecycle Management - PLM, o incluso alguna solución de Siemens NX para manufactura): La integración con un sistema como NX es crucial para vincular los datos de producción en tiempo real con las funciones de planificación, ejecución y gestión a nivel empresarial. La comunicación se establece a través de OPC UA, asegurando una transferencia de datos estructurada y eficiente desde Ignition o, si el sistema lo requiere, directamente desde la capa de control.<br>
+                        <b>Justificación:</b> Esta conexión es vital para cerrar el ciclo de información entre la planta y la gestión empresarial. Permite la trazabilidad del producto, la gestión de órdenes de trabajo, el control de calidad y la optimización de recursos, utilizando los datos en tiempo real de la producción para informar las decisiones de negocio.
+                    </li>
+                    <li>
+                        <strong>5. Conectividad a la Nube y Análisis Avanzado (Microsoft Azure + MQTT):</strong><br>
+                        <u>Microsoft Azure:</u> Azure, como plataforma de computación en la nube, ha sido seleccionada por su escalabilidad, seguridad de grado empresarial, su amplia gama de servicios (como IoT Hub, Data Lake, Machine Learning, Power BI) y su capacidad para procesar y almacenar grandes volúmenes de datos.<br>
+                        <b>Justificación:</b> La nube es un componente esencial para habilitar la analítica avanzada, el aprendizaje automático, el mantenimiento predictivo y la inteligencia de negocio a gran escala. Permite el acceso global a los datos y la ejecución de modelos complejos que no serían factibles con infraestructura únicamente local.<br>
+                        <u>MQTT (Message Queuing Telemetry Transport):</u> MQTT es el protocolo elegido para la comunicación entre Ignition (o directamente desde dispositivos de borde) y Azure. Se ha optado por MQTT debido a su ligereza, eficiencia en el uso del ancho de banda, su modelo de publicación/suscripción (lo que lo hace ideal para la comunicación masiva de dispositivos IoT) y su capacidad para operar eficientemente en redes con latencia variable.<br>
+                        <b>Justificación:</b> MQTT es el estándar de facto para el IoT industrial. Su eficiencia reduce los costos de transferencia de datos y asegura que la información de la planta pueda ser enviada de manera confiable y segura a la nube, incluso bajo condiciones de red desafiantes. Ignition, al contar con soporte nativo para MQTT, facilita enormemente esta integración.
+                    </li>
+                </ul>
+                <p>
+                    <b>Justificación General y Beneficios de la Arquitectura:</b><br>
+                    <ul>
+                        <li><b>Integración Holística:</b> Esta arquitectura proporciona una integración tanto vertical (desde el PLC hasta la nube) como horizontal (entre los diversos sistemas de la planta).</li>
+                        <li><b>Escalabilidad:</b> Cada componente ha sido seleccionado por su capacidad de escalar, lo que permite el crecimiento futuro de la fábrica sin requerir una reingeniería completa de la arquitectura.</li>
+                        <li><b>Eficiencia en la Recolección de Datos:</b> OPC UA e Ignition centralizan y estandarizan la recolección de datos en la planta, mientras que MQTT garantiza una transmisión eficiente hacia la nube.</li>
+                        <li><b>Habilitación de la Industria 4.0:</b> Permite la implementación de capacidades avanzadas como la analítica avanzada, la inteligencia artificial, el mantenimiento predictivo y la visibilidad en tiempo real, transformando la fábrica en una operación inteligente.</li>
+                        <li><b>Seguridad:</b> La elección de OPC UA (con sus características de seguridad intrínsecas) y la plataforma Azure (con sus robustas medidas de seguridad) asegura la protección de los datos industriales sensibles.</li>
+                        <li><b>Reducción de Costos Operacionales:</b> Al optimizar procesos y facilitar la toma de decisiones informadas, esta arquitectura contribuye a una mayor eficiencia y ahorro de costos a largo plazo.</li>
+                    </ul>
+                </p>
+            </div>
+        </section>
+        <section class="azure-section">
+            <div class="project-description-text">
+                <h2>Azure</h2>
+                <div class="figure-box">
+                    <figure>
+                        <img src="./assets/Azure.png" alt="Ignition en Azure" class="value-map">
+                        <figcaption class="figure-caption">Ignition desplegado en un contenedor en Azure</figcaption>
+                    </figure>
+                </div>
+                <p>
+                    En Azure, un contenedor es una instancia ligera y aislada que ejecuta una aplicación y sus dependencias. En este caso, se está usando un contenedor para desplegar el servidor Ignition, lo que permite montar un sistema SCADA en la nube sin necesidad de infraestructura física.
+                </p>
+                <p>
+                    <b>Ventajas clave:</b>
+                </p>
+                <ul>
+                    <li><b>Escalabilidad:</b> Se puede aumentar o reducir recursos fácilmente según demanda.</li>
+                    <li><b>Despliegue rápido:</b> El contenedor se inicia en segundos, facilitando pruebas y actualizaciones.</li>
+                    <li><b>Aislamiento:</b> Cada contenedor es independiente, evitando conflictos con otros servicios.</li>
+                    <li><b>Portabilidad:</b> El servidor Ignition puede moverse entre entornos locales y nube sin cambios.</li>
+                </ul>
+                <p>
+                    Este enfoque es ideal para una planta conectada, ya que facilita la supervisión remota, la integración con IoT y la implementación de manufactura flexible.
+                </p>
+            </div>
+        </section>
+        <section class="scada-interface-section">
+            <div class="project-description-text">
+                <h2>Interfaz SCADA</h2>
+                <div class="figure-box">
+                    <figure>
+                        <img src="./assets/SCADA1.png" alt="Interfaz SCADA - Principal" class="value-map">
+                        <img src="./assets/SCADA2.png" alt="Interfaz SCADA - Alarmas e Históricos" class="value-map" style="margin-top:1em;">
+                        <figcaption class="figure-caption">
+                            Vistas principales de la interfaz SCADA: supervisión en tiempo real, alarmas e históricos.
+                        </figcaption>
+                    </figure>
+                </div>
+                <p>
+Esta interfaz SCADA ha sido diseñada para proporcionar una supervisión, control y análisis completos de la "Línea de Ensamblaje de Scooters Eléctricas" dentro de una fábrica. Su estructura modular y su diseño intuitivo buscan maximizar la eficiencia operativa y la capacidad de respuesta ante cualquier evento en la producción.
+                </p>
+                <ol>
+                    <li>
+                        <b>Layout Principal (Pestaña "Principal"):</b><br>
+                        <u>Propósito:</u> Esta es la vista operativa central, diseñada para ofrecer una representación gráfica en tiempo real del estado y el flujo de la línea de ensamblaje. Permite a los operadores supervisar de forma inmediata el progreso de la producción y el estado de los componentes clave.<br>
+                        <u>Elementos Visuales y Funcionalidad:</u>
+                        <ul>
+                            <li><b>Representación Gráfica de la Línea:</b> Se observa un diagrama detallado de la línea de ensamblaje, que incluye diferentes etapas como "Recepción", "Soldadura", "Sub Eléctrico 1", "Sub Mecánico", "Accesorios", "Pruebas Funcionales", "Embalaje", entre otras. Las bandas transportadoras (identificadas como "Banda 1", "Banda 2", etc.) guían el flujo del producto.</li>
+                            <li><b>Indicadores de Sensores y Actuadores:</b>
+                                <ul>
+                                    <li><b>Círculos Amarillos (ej. "Triggered Sensor"):</b> Representan sensores en puntos clave de la línea. Su cambio de estado (presumiblemente de blanco/gris a amarillo) indica la detección de un objeto o una condición específica en ese punto, confirmando el avance del producto o la ocupación de una estación.</li>
+                                    <li><b>Cuadrados Verdes (ej. en Bandas):</b> Indican el estado operativo de los actuadores, como motores de bandas transportadoras o mecanismos de estación. Un color verde sugiere que el actuador está activo o la etapa está en funcionamiento.</li>
+                                    <li><b>Otros Indicadores:</b> Pueden existir otros elementos gráficos (como el círculo grande en "Soldadura") que representen maquinaria específica o áreas de proceso, cambiando de color o forma para indicar su estado (ej. en operación, detenido, con falla).</li>
+                                </ul>
+                            </li>
+                            <li><b>Flujo de la Línea de Producción en Tiempo Real:</b> Los indicadores de sensores y actuadores, junto con el movimiento simulado (implícito) de las bandas, permiten al operador visualizar el progreso del ensamblaje de cada scooter a través de las diferentes etapas, identificando posibles cuellos de botella o detenciones.</li>
+                            <li><b>Controles Globales:</b> El panel inferior izquierdo con un botón "Stop" (rojo) y un rectángulo negro (posiblemente un indicador de estado general o un botón de inicio/reinicio oculto) ofrece controles globales para detener la operación de toda la línea en caso de emergencia o para fines de mantenimiento.</li>
+                        </ul>
+                        <u>Justificación:</u> Esta vista es esencial para la supervisión inmediata. Permite a los operadores "ver" la línea de producción y reaccionar rápidamente a cualquier anomalía visible, como una banda detenida, un sensor no activado cuando debería, o un producto atascado. La simplicidad visual ayuda a reducir la carga cognitiva del operador.
+                    </li>
+                    <li>
+                        <b>Botones de Control Manual (Panel Derecho):</b><br>
+                        <u>Propósito:</u> La columna de botones en el lado derecho de la interfaz permite a los operadores tomar el control manual de los actuadores en cada etapa específica de la línea de producción.<br>
+                        <u>Funcionalidad:</u> Cada botón (ej. "Recepción", "Soldadura", "Sub eléctrico 1", etc.) corresponde a una etapa o un conjunto de actuadores dentro de esa etapa. Al activarse, estos botones anulan el control automático para permitir operaciones como:
+                        <ul>
+                            <li>Iniciar o detener una banda transportadora específica para mantenimiento o liberación de atascos.</li>
+                            <li>Activar o desactivar procesos específicos de una estación (ej. iniciar un ciclo de soldadura).</li>
+                            <li>Mover productos individualmente o en pequeños grupos para pruebas o reconfiguraciones.</li>
+                        </ul>
+                        <u>Justificación:</u> El control manual es crucial para diversas situaciones:
+                        <ul>
+                            <li><b>Mantenimiento:</b> Permite a los técnicos mover partes de la línea para realizar reparaciones o inspecciones de forma segura.</li>
+                            <li><b>Recuperación de Fallas:</b> Si un sistema automático falla, los operadores pueden intentar mover manualmente los productos para evitar un paro total de la línea.</li>
+                            <li><b>Pruebas y Configuración:</b> Facilita la puesta en marcha, las pruebas de nuevos productos o procesos, y la calibración de la línea.</li>
+                            <li><b>Flexibilidad Operativa:</b> Otorga a los operadores la capacidad de intervenir directamente cuando el sistema automático no puede resolver una situación particular.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <b>Ventana de "Alarmas" (Pestaña "Alarmas"):</b><br>
+                        <u>Propósito:</u> Esta ventana es el centro de monitoreo de eventos críticos y desviaciones de las condiciones normales de operación. Su función principal es alertar a los operadores y al personal de mantenimiento sobre problemas que requieren atención inmediata para evitar interrupciones o daños.<br>
+                        <u>Contenido (Según descripción):</u>
+                        <ul>
+                            <li><b>Límites de Rango de Velocidad:</b> Monitoreará si la velocidad de cualquier banda transportadora excede o cae por debajo de los límites predefinidos (máximo y mínimo). Por ejemplo, si una banda se acelera demasiado, podría indicar un mal funcionamiento mecánico o eléctrico. Si se detiene o ralentiza excesivamente, podría señalar un atasco o una falla del motor.</li>
+                            <li><b>Bandera de Falla de la Banda Transportadora:</b> Este tipo de alarma se activaría ante una condición específica que indique una falla en el mecanismo de una banda, como un sensor de rotura de cadena/correa, un sensor de sobrecarga de motor, o un fallo en el inversor de frecuencia.</li>
+                        </ul>
+                        <u>Justificación:</u> La ventana de alarmas es vital para la operación proactiva y reactiva:
+                        <ul>
+                            <li><b>Detección Temprana de Problemas:</b> Permite identificar problemas antes de que escalen a fallas catastróficas.</li>
+                            <li><b>Respuesta Rápida:</b> Proporciona información inmediata sobre la naturaleza y ubicación de la falla, permitiendo a los operadores y técnicos actuar rápidamente para minimizar el tiempo de inactividad.</li>
+                            <li><b>Seguridad:</b> Las alarmas relacionadas con velocidad o fallas de equipo son críticas para la seguridad del personal y la integridad de la maquinaria.</li>
+                            <li><b>Registro de Eventos:</b> Normalmente, una ventana de alarmas también registra el historial de activaciones, lo que es invaluable para el análisis de causas raíz y la mejora continua de procesos.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <b>Ventana de "Históricos" (Pestaña "Históricos"):</b><br>
+                        <u>Propósito:</u> Esta ventana está dedicada a la visualización y análisis de datos históricos de la línea de producción. Su objetivo es proporcionar una visión a largo plazo del comportamiento de la línea, permitiendo identificar tendencias, optimizar el rendimiento y diagnosticar problemas recurrentes.<br>
+                        <u>Contenido (Según descripción):</u>
+                        <ul>
+                            <li><b>Gráficos de Velocidad de las Bandas Transportadoras:</b> Muestra la velocidad de cada banda a lo largo del tiempo. Esto permite detectar fluctuaciones, desviaciones del punto de ajuste, o variaciones de velocidad que podrían indicar desgaste del equipo o inconsistencias en el flujo de material.</li>
+                            <li><b>Gráficos de Posición de las Bandas Transportadoras:</b> En líneas con servomotores o donde la posición precisa es crítica (ej. para indexación), estos gráficos mostrarían la posición de la banda o de un elemento transportado. Esto es útil para verificar la precisión del posicionamiento, identificar desvíos o problemas de sincronización.</li>
+                        </ul>
+                        <u>Justificación:</u> La ventana de históricos es fundamental para la optimización y el análisis retrospectivo:
+                        <ul>
+                            <li><b>Análisis de Rendimiento:</b> Permite evaluar la eficiencia de la línea a lo largo de turnos, días o semanas.</li>
+                            <li><b>Mantenimiento Predictivo/Preventivo:</b> Las tendencias en velocidad, temperatura o vibración (si estuvieran presentes) pueden indicar un desgaste gradual de componentes, permitiendo programar el mantenimiento antes de que ocurra una falla.</li>
+                            <li><b>Optimización de Procesos:</b> Al analizar los patrones históricos, se pueden identificar puntos de mejora en la secuencia de operaciones, los tiempos de ciclo o el equilibrio de la línea.</li>
+                            <li><b>Resolución de Problemas:</b> Cuando se produce una falla, los datos históricos son cruciales para comprender las condiciones que precedieron al evento y determinar la causa raíz.</li>
+                            <li><b>Validación de Mejoras:</b> Permite verificar si los cambios implementados en la línea han tenido el efecto deseado en el rendimiento.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </section>
+    </div>
 </body>
 </html>

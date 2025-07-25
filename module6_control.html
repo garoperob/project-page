@@ -25,6 +25,7 @@
                         <li><a href="module5_virtual.html">Virtulización de la fábrica</a></li>
                         <li><a href="module6_control.html">Controladores Industriales</a></li>
                         <li><a href="module7_SCADA.html">Sistema de supervisión SCADA</a></li>
+                        <li><a href="module8_digital.html">Digital Factory</a></li>
                     </ul>
                 </li>
 
@@ -44,8 +45,109 @@
     </header>
 
     <div class="container_module">
-        <div class="project-description-text">
-            <h1 class="module_title">Controladores Industriales</h1>
-            <p></p>
+        <section class="flowchart-section">
+            <div class="project-description-text">
+                <h1 class="module_title">Controladores Industriales</h1>
+                <h2>Diagrama de flujo propuesto</h2>
+                <!-- Nueva subsección: Diagrama de flujo y explicación -->
+                <div class="figure-box">
+                    <figure>
+                        <img src="./assets/flowchart.png" alt="Diagrama de flujo celda de soldadura" class="value-map">
+                        <figcaption class="figure-caption">Diagrama de flujo propuesto para la celda de soldadura automatizada</figcaption>
+                    </figure>
+                </div>
+                <p>
+                    El diagrama de flujo propuesto para la celda de soldadura automatizada presenta una 
+                    secuencia estructurada de estados lógicos que permiten controlar el proceso de forma 
+                    precisa, segura y eficiente. El flujo inicia en el <strong>estado de espera de inicio 
+                    del ciclo</strong>, donde el sistema permanece inactivo hasta que se cumplan las 
+                    condiciones necesarias para comenzar, ya sea de forma automática o por acción del 
+                    operario. Esta etapa garantiza que no se ejecute el proceso sin la confirmación 
+                    explícita, evitando errores por activaciones no deseadas.<br><br>
+
+                    Una vez iniciado, se transiciona al <strong>estado de verificación de la pieza
+                    </strong>, donde se comprueba mediante sensores la presencia del componente a soldar. 
+                    Esta verificación es crítica para asegurar que la celda no opere en vacío o con 
+                    piezas mal posicionadas. Si la verificación falla, el flujo retorna al estado 
+                    inicial, protegiendo al sistema y manteniendo la seguridad.<br><br>
+
+                    Superada la verificación, el proceso avanza al <strong>estado de sujeción de la 
+                    pieza</strong>, asegurando su inmovilidad durante la operación. Luego, se 
+                    transita al <strong>estado de activación del proceso de soldadura</strong>, 
+                    donde el sistema ejecuta la rutina correspondiente de forma autónoma. Esta 
+                    secuencia de estados asegura que no haya superposición de acciones, y que cada 
+                    paso dependa del cumplimiento del anterior.<br><br>
+
+                    Tras finalizar la soldadura, se pasa al <strong>estado de validación del 
+                    resultado</strong>, donde sensores o sistemas de visión verifican la calidad del 
+                    cordón. Si se detecta un defecto, se redirige la pieza al flujo de rechazo o 
+                    retrabajo; si es aceptada, el proceso continúa hacia el <strong>estado de liberación 
+                    de la pieza</strong>. Finalmente, se alcanza un <strong>estado de fin de 
+                    ciclo</strong>, desde donde se puede reiniciar el proceso.<br><br>
+
+                    La estructura de este diagrama fue diseñada para garantizar la <strong>seguridad 
+                    operativa, la trazabilidad del proceso y la capacidad de recuperación ante 
+                    fallos.</strong> El uso de condiciones de transición bien definidas permite que el 
+                    sistema sea fácilmente controlable mediante autómatas programables y adaptable a 
+                    variaciones del proceso sin perder robustez.
+                </p>
+                <p></p>
+            </div>
+        </section>
+        <section class="main-routine-section">
+            <div class="project-description-text">
+                <h2>Rutina principal</h2>
+                <div class="figure-box">
+                    <figure>
+                        <img src="./assets/mainRoutine.png" alt="Rutina principal PLC" class="value-map">
+                        <figcaption class="figure-caption">Rutina principal (MainRoutine) del controlador industrial</figcaption>
+                    </figure>
+                </div>
+                <p>
+                    La rutina principal (MainRoutine) fue estructurada mediante una secuencia ordenada 
+                    de llamadas a subrutinas (JSR), con el fin de dividir el proceso completo en etapas 
+                    funcionales independientes que reflejan de manera fiel el flujo real de la línea de 
+                    ensamblaje. Esta organización modular permite una programación clara, escalable y 
+                    fácil de mantener, ya que cada etapa del proceso —desde la recepción hasta el 
+                    embalaje— queda encapsulada dentro de su propia subrutina.
+                    <br><br>
+                    La ejecución comienza con una condición de habilitación general (Start_Linea), lo 
+                    que permite controlar cuándo se inicia efectivamente la secuencia. A partir de 
+                    allí, se invocan secuencialmente las rutinas Recepcion, Sub_Electrico_1, 
+                    Sub_Mecanico y Sub_Accesorios, las cuales están pensadas para preparar y 
+                    condicionar los subconjuntos antes del proceso principal de integración. 
+                    Posteriormente, se ejecutan las etapas operativas del ensamblaje como Soldadura, 
+                    Electrico_1, Mecanico, Electrico_2, Accesorios, seguidas por las etapas de 
+                    verificación (Pruebas) y cierre del proceso (Embalaje).
+                    <br><br>
+                    Esta estructura fue elegida intencionalmente para facilitar la depuración y pruebas 
+                    de cada sección de forma independiente, permitiendo además su reutilización o 
+                    modificación sin afectar el resto del sistema. Al evitar una lógica monolítica 
+                    dentro de un solo bloque, se mejora la organización general del proyecto, se reduce 
+                    la complejidad del programa principal y se facilita la colaboración en entornos de 
+                    trabajo en equipo. Aunque en esta etapa inicial todas las subrutinas se ejecutan de 
+                    forma condicional al arranque, se ha dejado el diseño preparado para implementar 
+                    señales de transición o flags que controlen el paso entre etapas, asegurando así una 
+                    ejecución robusta y segura.
+                </p>
+            </div>
+        </section>
+        <section class="recepcion-routine-section">
+            <div class="project-description-text">
+                <h2>Subrutina Recepción</h2>
+                <div class="figure-box">
+                    <figure>
+                        <img src="./assets/recepcionRoutine.png" alt="Subrutina Recepción PLC" class="value-map">
+                        <figcaption class="figure-caption">Subrutina de Recepción del controlador industrial</figcaption>
+                    </figure>
+                </div>
+                <p>
+                    La estructura lógica implementada en esta subrutina responde a una filosofía de diseño modular, en la cual cada etapa del proceso posee condiciones claras de habilitación, seguridad y sincronización con las etapas adyacentes. En este caso, la activación de la banda de recepción (NX_Banda1) depende del estado del sensor de inicio, del sensor de fin, de la disponibilidad de la siguiente estación (NX_Banda2) y de una condición de arranque general (Start_Recepcion), todo ello controlado por una lógica retentiva que garantiza continuidad mientras las condiciones se mantengan.
+                    <br><br>
+                    Este patrón no solo asegura un funcionamiento seguro y ordenado, sino que además se extrapola directamente a todas las demás etapas del proceso, como la estación de inspección, clasificación y empaque. Gracias a esta modularidad, cada sección puede operar de manera autónoma pero sincronizada, facilitando la implementación de sistemas de manufactura flexible, donde las etapas pueden reconfigurarse, reprogramarse o escalarse con mínima intervención. Esta estructura también favorece la depuración, el mantenimiento y la integración con sistemas de supervisión tipo SCADA, permitiendo una rápida adaptación a distintos flujos productivos o cambios en la línea.
+                </p>
+            </div>
+        </section>
+    </div>
 </body>
 </html>
